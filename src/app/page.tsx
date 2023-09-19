@@ -1,113 +1,207 @@
-import Image from 'next/image'
+"use client";
 
-export default function Home() {
+import Head from "next/head";
+import StarBackground from "../components/starField/star";
+import Image from "next/image";
+import {
+  AiOutlineGithub,
+  AiOutlineLinkedin,
+  AiOutlineYoutube,
+} from "react-icons/ai";
+import { FaGitlab } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { LiaYCombinator } from "react-icons/lia";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import TerminalInput from "@/components/terminalCursor";
+
+function Terminal() {
+  const [inputValue, setInputValue] = useState("");
+  const inputRef = useRef<HTMLInputElement>(null); // Step 1: Create a ref
+
+  const handleDivClick = () => {
+    if (inputRef.current) {
+      inputRef.current.focus(); // Focus the input when the div is clicked
+    }
+  };
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div
+      className="min-w-[70vw] min-h-[600px] h-max flex-1  rounded-lg flex flex-col relative"
+      onClick={handleDivClick} // Step 2: Add an onClick event handler to the parent div
+    >
+      <div
+        className={`fadeOutAnimation absolute text-xl w-full h-full flex justify-center items-center`}
+      >
+        <div className="border-2 p-10 rounded-lg bg-black">
+          Hello! Welcome to my personal website 🚀
         </div>
       </div>
+      <div className="flex-1 flex flex-row justify-between fadeInAnimation w-full h-full items-stretch font-mono rounded-lg border-gray-400 border-2 text-xs bg-cyan-800">
+        <div className="flex flex-col border-r-2 text-center h-auto border-gray-400">
+          <div className="border-b text-left py-1 px-6">/terminal</div>
+          <div className="border-b text-left py-1 px-6">/images</div>
+          <div className="border-b text-left py-1 px-6">/videos</div>
+          <div className="border-b text-left py-1 px-6">
+            /blog {"(coming soon)"}
+          </div>
+        </div>
+        <div className="flex-grow flex flex-col justify-end bg-black rounded-r-lg bg-opacity-50 px-5 py-1">
+          <div>~/justintorre.com {">"} ./run_website</div>
+          <div className="flex flex-row items-center">
+            <div>~/justintorre.com {">"}</div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+            <TerminalInput
+              className="flex-grow"
+              ref={inputRef} // Pass the ref to the TerminalInput component
+              placeholder=""
+              value={inputValue}
+              onChange={setInputValue}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const contacts: {
+  url: string;
+  name: string;
+  icon: React.FC<{
+    className: string;
+  }>;
+}[] = [
+  {
+    url: "https://twitter.com/justintorre",
+    name: "Twitter",
+    icon: FaXTwitter,
+  },
+  {
+    url: "",
+    name: "Github",
+    icon: AiOutlineGithub,
+  },
+  {
+    url: "",
+    name: "Gitlab",
+    icon: FaGitlab,
+  },
+  {
+    url: "",
+    name: "Linkedin",
+    icon: AiOutlineLinkedin,
+  },
+  {
+    url: "",
+    name: "Youtube",
+    icon: AiOutlineYoutube,
+  },
+  {
+    url: "",
+    name: "YCombinator",
+    icon: LiaYCombinator,
+  },
+];
+
+const recentProjects: {
+  title: string;
+  description: string;
+  url: string;
+  date: Date;
+}[] = [
+  {
+    title: "Helicone Re-launch",
+    description: "A platform for monitoring AI models.",
+    url: "https://helicone.ai",
+    date: new Date("2023-07-01"),
+  },
+  {
+    title: "YC W23 Batch",
+    description: "I recently finished YCombinator's W23 batch.",
+    url: "https://www.ycombinator.com/",
+    date: new Date("2023-04-01"),
+  },
+  {
+    title: "Scale AI Hackathon",
+    description: "Won 3rd place in Scale AI's Hackathon.",
+    url: "#",
+    date: new Date("2023-03-01"),
+  },
+];
+
+export default function Home() {
+  const image =
+    "https://www.helicone.ai/_next/image?url=%2Fassets%2Flanding%2Fhelicone-mobile.webp&w=384&q=75";
+
+  return (
+    <>
+      <Head>
+        <title>{`Justin Torre | Builder | CEO Helicone`}</title>
+        <link rel="icon" href="/assets/landing/helicone-mobile.webp" />
+        <meta property="og:title" content={"Justin Torre"} />
+        <meta
+          property="og:description"
+          name="description"
+          content="Justin Torre is a builder, CEO of Helicone, and a full stack developer."
+          key="desc"
         />
-      </div>
+        <meta
+          property="og:image"
+          content={
+            image
+              ? image
+              : "https://www.helicone.ai/_next/image?url=%2Fassets%2Flanding%2Fhelicone-mobile.webp&w=384&q=75"
+          }
+        />
+      </Head>
+      <StarBackground />
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      <main className="z-30 flex min-h-screen flex-col items-center justify-between p-28 w-full gap-8">
+        <p className="z-50 font-mono text-lg fixed left-0 top-0 flex w-full justify-center bg-gradient-to-b backdrop-blur-2xl p-8">
+          Justin Torre{""}
+        </p>
+        <p className="z-50 font-mono text-lg fixed left-0 bottom-0 w-full  p-5 flex justify-center gap-1 lg:gap-5 backdrop-blur-2xl">
+          {contacts.map((contact) => (
+            <Link
+              href={contact.url}
+              key={contact.name}
+              className="flex items-center hover:border-neutral-700 hover:bg-neutral-800/30 p-2 lg:p-5 rounded-lg border border-transparent  transition-transform hover:scale-105 motion-reduce:transform-none"
+            >
+              <contact.icon className="mr-2 h-6 w-6" />
+              <span className="hidden lg:block">{contact.name}</span>
+            </Link>
+          ))}
+        </p>
+        <Terminal />
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+        <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-2 lg:text-left">
+          {recentProjects.map((project) => (
+            <Link
+              href={project.url}
+              className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+              target="_blank"
+              rel="noopener noreferrer"
+              key={project.title}
+            >
+              <h2 className={`mb-3 text-2xl font-semibold`}>
+                {project.title}{" "}
+              </h2>
+              <h3
+                className={`m-0 max-w-[30ch] text-sm opacity-50 mb-2 text-gray-500`}
+              >
+                {project.date.toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                })}
+              </h3>
+              <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
+                {project.description}
+              </p>
+            </Link>
+          ))}
+        </div>
+      </main>
+    </>
+  );
 }
