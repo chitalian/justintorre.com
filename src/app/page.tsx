@@ -27,7 +27,7 @@ function Terminal() {
 
   return (
     <div
-      className="min-w-[70vw] min-h-[600px] h-max flex-1  rounded-lg flex flex-col relative"
+      className="min-w-[90vw] min-h-[35fa0px] lg:min-w-[70vw] lg:min-h-[600px] h-max flex-1  rounded-lg flex flex-col relative "
       onClick={handleDivClick} // Step 2: Add an onClick event handler to the parent div
     >
       <div
@@ -38,7 +38,7 @@ function Terminal() {
         </div>
       </div>
       <div className="flex-1 flex flex-row justify-between fadeInAnimation w-full h-full items-stretch font-mono rounded-lg border-gray-400 border-2 text-xs bg-cyan-800">
-        <div className="flex flex-col border-r-2 text-center h-auto border-gray-400">
+        <div className="lg:flex flex-col border-r-2 text-center h-auto border-gray-400 hidden">
           <div className="border-b text-left py-1 px-6">/terminal</div>
           <div className="border-b text-left py-1 px-6">/images</div>
           <div className="border-b text-left py-1 px-6">/videos</div>
@@ -47,10 +47,17 @@ function Terminal() {
           </div>
         </div>
         <div className="flex-grow flex flex-col justify-end bg-black rounded-r-lg bg-opacity-50 px-5 py-1">
-          <div>~/justintorre.com {">"} ./run_website</div>
-          <div className="flex flex-row items-center">
-            <div>~/justintorre.com {">"}</div>
+          <div className="flex flex-row gap-1">
+            <span className="hidden lg:block">~/justintorre.com</span>
+            <span>{">"}</span>
+            <span>./run_website</span>
+          </div>
 
+          <div className="flex flex-row items-center">
+            <div className="flex flex-row gap-1">
+              <span className="hidden lg:block">~/justintorre.com</span>
+              <span>{">"}</span>
+            </div>
             <TerminalInput
               className="flex-grow"
               ref={inputRef} // Pass the ref to the TerminalInput component

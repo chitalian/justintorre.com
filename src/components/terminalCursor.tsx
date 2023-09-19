@@ -30,21 +30,11 @@ const TerminalInput = forwardRef<HTMLInputElement, TerminalInputProps>(
         <input
           ref={ref} // Use the forwarded ref here
           type="text"
-          className="bg-transparent outline-none w-full text-white caret-transparent"
+          className="bg-transparent outline-none w-full text-white"
           placeholder={placeholder}
           value={value}
           onChange={(e) => onChange(e.target.value)}
         />
-        <span
-          ref={textWidthRef}
-          className="absolute opacity-0 whitespace-nowrap"
-        >
-          {value}
-        </span>
-        <span
-          className="absolute bottom-2.5 left-0 transform translate-x-[calc(100%+2.5px)] bg-white w-1.5 h-3 bg-opacity-50adf animate-blink"
-          style={{ left: `${textWidth}px` }}
-        ></span>
       </div>
     );
   }
