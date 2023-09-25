@@ -14,63 +14,7 @@ import { LiaYCombinator } from "react-icons/lia";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import TerminalInput from "@/components/terminalCursor";
-
-function Terminal() {
-  const [inputValue, setInputValue] = useState("");
-  const inputRef = useRef<HTMLInputElement>(null); // Step 1: Create a ref
-
-  const handleDivClick = () => {
-    if (inputRef.current) {
-      inputRef.current.focus(); // Focus the input when the div is clicked
-    }
-  };
-
-  return (
-    <div
-      className="min-w-[90vw] min-h-[35fa0px] lg:min-w-[70vw] lg:min-h-[600px] h-max flex-1  rounded-lg flex flex-col relative "
-      onClick={handleDivClick} // Step 2: Add an onClick event handler to the parent div
-    >
-      <div
-        className={`fadeOutAnimation absolute text-xl w-full h-full flex justify-center items-center`}
-      >
-        <div className="border-2 p-10 rounded-lg bg-black">
-          Hello! Welcome to my personal website 🚀
-        </div>
-      </div>
-      <div className="flex-1 flex flex-row justify-between fadeInAnimation w-full h-full items-stretch font-mono rounded-lg border-gray-400 border-2 text-xs bg-cyan-800">
-        <div className="lg:flex flex-col border-r-2 text-center h-auto border-gray-400 hidden">
-          <div className="border-b text-left py-1 px-6">/terminal</div>
-          <div className="border-b text-left py-1 px-6">/images</div>
-          <div className="border-b text-left py-1 px-6">/videos</div>
-          <div className="border-b text-left py-1 px-6">
-            /blog {"(coming soon)"}
-          </div>
-        </div>
-        <div className="flex-grow flex flex-col justify-end bg-black rounded-r-lg bg-opacity-50 px-5 py-1">
-          <div className="flex flex-row gap-1">
-            <span className="hidden lg:block">~/justintorre.com</span>
-            <span>{">"}</span>
-            <span>./run_website</span>
-          </div>
-
-          <div className="flex flex-row items-center">
-            <div className="flex flex-row gap-1">
-              <span className="hidden lg:block">~/justintorre.com</span>
-              <span>{">"}</span>
-            </div>
-            <TerminalInput
-              className="flex-grow"
-              ref={inputRef} // Pass the ref to the TerminalInput component
-              placeholder=""
-              value={inputValue}
-              onChange={setInputValue}
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+import { Terminal } from "@/components/terminal";
 
 const contacts: {
   url: string;
@@ -85,27 +29,27 @@ const contacts: {
     icon: FaXTwitter,
   },
   {
-    url: "",
+    url: "https://github.com/chitalian",
     name: "Github",
     icon: AiOutlineGithub,
   },
   {
-    url: "",
+    url: "https://gitlab.com/justintorre75",
     name: "Gitlab",
     icon: FaGitlab,
   },
   {
-    url: "",
+    url: "https://www.linkedin.com/in/justintorre/",
     name: "Linkedin",
     icon: AiOutlineLinkedin,
   },
   {
-    url: "",
+    url: "https://www.youtube.com/@justintorre694/featured",
     name: "Youtube",
     icon: AiOutlineYoutube,
   },
   {
-    url: "",
+    url: "https://www.ycombinator.com/companies/helicone",
     name: "YCombinator",
     icon: LiaYCombinator,
   },
@@ -120,20 +64,20 @@ const recentProjects: {
   {
     title: "Helicone Re-launch",
     description: "A platform for monitoring AI models.",
-    url: "https://helicone.ai",
+    url: "https://x.com/helicone_ai/status/1686840508658876419?s=20",
     date: new Date("2023-07-01"),
   },
   {
     title: "YC W23 Batch",
     description: "I recently finished YCombinator's W23 batch.",
-    url: "https://www.ycombinator.com/",
+    url: "https://www.ycombinator.com/launches/I73-helicone-open-source-observability-platform-for-generative-ai",
     date: new Date("2023-04-01"),
   },
   {
     title: "Scale AI Hackathon",
     description: "Won 3rd place in Scale AI's Hackathon.",
-    url: "#",
-    date: new Date("2023-03-01"),
+    url: "https://sfstandard.com/2023/02/02/tom-brady-and-gisele-bundchen-face-off-in-ai-rap-battle/",
+    date: new Date("2023-02-02"),
   },
 ];
 
@@ -164,9 +108,9 @@ export default function Home() {
       </Head>
       <StarBackground />
 
-      <main className="z-30 flex min-h-screen flex-col items-center justify-between p-28 w-full gap-8">
+      <main className="z-30 flex min-h-screen flex-col items-center justify-between py-28 lg:p-28 w-full gap-8">
         <p className="z-50 font-mono text-lg fixed left-0 top-0 flex w-full justify-center bg-gradient-to-b backdrop-blur-2xl p-8">
-          Justin Torre{""}
+          Justin Torre
         </p>
         <p className="z-50 font-mono text-lg fixed left-0 bottom-0 w-full  p-5 flex justify-center gap-1 lg:gap-5 backdrop-blur-2xl">
           {contacts.map((contact) => (
@@ -180,7 +124,9 @@ export default function Home() {
             </Link>
           ))}
         </p>
-        <Terminal />
+        <div className="h-[500px] w-full max-w-4xl">
+          <Terminal />
+        </div>
 
         <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-2 lg:text-left">
           {recentProjects.map((project) => (

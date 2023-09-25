@@ -7,29 +7,24 @@ interface TerminalInputProps {
   value: string;
   onChange: (value: string) => void;
   className?: string;
+  onKeyPress?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 
 const TerminalInput = forwardRef<HTMLInputElement, TerminalInputProps>(
-  ({ placeholder, value, onChange, className }, ref) => {
-    const textWidthRef = useRef<HTMLSpanElement>(null);
-    const [textWidth, setTextWidth] = useState(0);
-
-    useEffect(() => {
-      if (textWidthRef.current) {
-        setTextWidth(textWidthRef.current.offsetWidth);
-      }
-    }, [value]);
-
+  ({ placeholder, value, onChange, className, onKeyPress }, ref) => {
     return (
       <div
         className={clsx(
-          "relative bg-transparent text-white p-2 rounded",
+          "relative bg-transparent text-white px-2 rounded",
           className
         )}
       >
         <input
           ref={ref} // Use the forwarded ref here
           type="text"
+          onKeyDown={(e) => {
+            onKeyPress && onKeyPress(e);
+          }}
           className="bg-transparent outline-none w-full text-white"
           placeholder={placeholder}
           value={value}

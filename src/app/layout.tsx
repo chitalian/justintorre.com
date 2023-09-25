@@ -2,6 +2,10 @@ import StarBackground from "@/components/starField/star";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import {
+  HeliconeProxyConfiguration as Configuration,
+  HeliconeProxyOpenAIApi as OpenAIApi,
+} from "helicone";
 
 const inter = Inter({ subsets: ["latin"] });
 
