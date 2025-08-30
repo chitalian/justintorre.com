@@ -1,6 +1,45 @@
 import React from "react";
 import Link from "next/link";
 import { videoData } from "./VideoData";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Videos | Justin Torre - Drone Projects & Tech Content",
+  description: "Watch Justin Torre's collection of drone videos, tech projects, and innovative engineering demonstrations. Featuring autonomous drones, computer vision, and creative builds.",
+  keywords: [
+    "drone videos",
+    "autonomous drones",
+    "tech projects",
+    "engineering videos",
+    "Justin Torre videos",
+    "drone technology",
+    "computer vision",
+    "robotics"
+  ],
+  openGraph: {
+    title: "Videos | Justin Torre",
+    description: "Watch Justin Torre's collection of drone videos and tech projects",
+    type: "website",
+    url: "https://justintorre.com/videos",
+    images: [
+      {
+        url: "https://www.helicone.ai/_next/image?url=%2Fassets%2Flanding%2Fhelicone-mobile.webp&w=384&q=75",
+        width: 1200,
+        height: 630,
+        alt: "Justin Torre Videos",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Videos | Justin Torre",
+    description: "Watch Justin Torre's collection of drone videos and tech projects",
+    creator: "@justintorre",
+  },
+  alternates: {
+    canonical: "/videos",
+  },
+};
 
 type VideoProps = {
   youtube_src?: string;

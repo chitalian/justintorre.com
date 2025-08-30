@@ -88,27 +88,29 @@ export default function Home() {
     <>
       <StarBackground />
 
-      <main className="z-30 flex min-h-screen flex-col items-center justify-between py-28 lg:p-28 w-full gap-8">
-        <p className="z-50 font-mono text-lg fixed left-0 top-0 flex w-full justify-center bg-gradient-to-b backdrop-blur-2xl p-8">
+      <main className="z-30 flex min-h-screen flex-col items-center justify-between py-28 lg:p-28 w-full gap-8" role="main">
+        <h1 className="z-50 font-mono text-lg fixed left-0 top-0 flex w-full justify-center bg-gradient-to-b backdrop-blur-2xl p-8">
           Justin Torre
-        </p>
-        <p className="z-50 font-mono text-lg fixed left-0 bottom-0 w-full  p-5 flex justify-center gap-1 lg:gap-5 backdrop-blur-2xl">
+        </h1>
+        <nav className="z-50 font-mono text-lg fixed left-0 bottom-0 w-full  p-5 flex justify-center gap-1 lg:gap-5 backdrop-blur-2xl" role="navigation" aria-label="Social media links">
           {contacts.map((contact) => (
             <Link
               href={contact.url}
               key={contact.name}
               className="flex items-center hover:border-neutral-700 hover:bg-neutral-800/30 p-2 lg:p-5 rounded-lg border border-transparent  transition-transform hover:scale-105 motion-reduce:transform-none"
+              aria-label={`Visit Justin Torre's ${contact.name} profile`}
+              title={`${contact.name} Profile`}
             >
-              <contact.icon className="mr-2 h-6 w-6" />
+              <contact.icon className="mr-2 h-6 w-6" aria-hidden="true" />
               <span className="hidden lg:block">{contact.name}</span>
             </Link>
           ))}
-        </p>
+        </nav>
         <div className="h-[500px] w-full max-w-4xl">
           <Terminal />
         </div>
 
-        <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-2 lg:text-left">
+        <section className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-2 lg:text-left" aria-label="Recent Projects">
           {recentProjects.map((project) => (
             <Link
               href={project.url}
@@ -116,24 +118,26 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               key={project.title}
+              aria-label={`Learn more about ${project.title}`}
             >
               <h2 className={`mb-3 text-2xl font-semibold`}>
                 {project.title}{" "}
               </h2>
-              <h3
-                className={`m-0 max-w-[30ch] text-sm opacity-50 mb-2 text-gray-500`}
+              <time
+                className={`m-0 max-w-[30ch] text-sm opacity-50 mb-2 text-gray-500 block`}
+                dateTime={project.date.toISOString()}
               >
                 {project.date.toLocaleDateString("en-US", {
                   year: "numeric",
                   month: "long",
                 })}
-              </h3>
+              </time>
               <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
                 {project.description}
               </p>
             </Link>
           ))}
-        </div>
+        </section>
       </main>
     </>
   );
