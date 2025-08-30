@@ -1,6 +1,5 @@
 "use client";
 
-import Head from "next/head";
 import StarBackground from "../components/starField/star";
 import Image from "next/image";
 import {
@@ -87,25 +86,6 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>{`Justin Torre | Builder | CEO Helicone`}</title>
-        <link rel="icon" href="/assets/landing/helicone-mobile.webp" />
-        <meta property="og:title" content={"Justin Torre"} />
-        <meta
-          property="og:description"
-          name="description"
-          content="Justin Torre is a builder, CEO of Helicone, and a full stack developer."
-          key="desc"
-        />
-        <meta
-          property="og:image"
-          content={
-            image
-              ? image
-              : "https://www.helicone.ai/_next/image?url=%2Fassets%2Flanding%2Fhelicone-mobile.webp&w=384&q=75"
-          }
-        />
-      </Head>
       <StarBackground />
 
       <main className="z-30 flex min-h-screen flex-col items-center justify-between py-28 lg:p-28 w-full gap-8">
