@@ -10,46 +10,46 @@ export const metadata: Metadata = {
 };
 
 const PrivacyPolicy: React.FC = () => (
-  <main className="max-w-2xl mx-auto px-5 py-10 text-gray-900 leading-relaxed">
-    <h1 className="text-3xl font-bold tracking-wide">Tracer — Privacy Policy</h1>
-    <p className="text-sm text-gray-500 mt-1">Last updated: June 27, 2026</p>
+  <main className="max-w-2xl mx-auto px-5 py-12 text-gray-200 leading-relaxed">
+    <h1 className="text-3xl font-bold tracking-wide text-white">Tracer — Privacy Policy</h1>
+    <p className="text-sm text-gray-400 mt-1">Last updated: June 27, 2026</p>
 
     <p className="mt-6">Tracer is a one-stroke line-tracing puzzle game.</p>
 
-    <h2 className="text-xl font-semibold mt-7">What we collect</h2>
+    <h2 className="text-xl font-semibold mt-7 text-white">What we collect</h2>
     <p className="mt-2">
-      <strong>Nothing personal.</strong> Tracer does not collect, store, or share any
+      <strong className="text-white">Nothing personal.</strong> Tracer does not collect, store, or share any
       personally identifiable information. There is no account, and we do not ask for your
       name, email, contacts, location, photos, or similar data.
     </p>
 
-    <h2 className="text-xl font-semibold mt-7">On-device data</h2>
+    <h2 className="text-xl font-semibold mt-7 text-white">On-device data</h2>
     <p className="mt-2">
       Your progress (which levels you&apos;ve solved and game settings) is stored{" "}
-      <strong>locally on your device only</strong>. It is not transmitted to us or any
+      <strong className="text-white">locally on your device only</strong>. It is not transmitted to us or any
       third party. Deleting the app removes this data.
     </p>
 
-    <h2 className="text-xl font-semibold mt-7">Analytics &amp; tracking</h2>
+    <h2 className="text-xl font-semibold mt-7 text-white">Analytics &amp; tracking</h2>
     <p className="mt-2">
       Tracer does not use third-party analytics, advertising SDKs, or cross-app tracking,
       and does not use the Advertising Identifier (IDFA).
     </p>
 
-    <h2 className="text-xl font-semibold mt-7">Children</h2>
+    <h2 className="text-xl font-semibold mt-7 text-white">Children</h2>
     <p className="mt-2">
       Tracer is suitable for all ages and does not knowingly collect data from anyone.
     </p>
 
-    <h2 className="text-xl font-semibold mt-7">Changes</h2>
+    <h2 className="text-xl font-semibold mt-7 text-white">Changes</h2>
     <p className="mt-2">
       If this policy changes, the updated version will be posted at this URL with a new date.
     </p>
 
-    <h2 className="text-xl font-semibold mt-7">Contact</h2>
+    <h2 className="text-xl font-semibold mt-7 text-white">Contact</h2>
     <p className="mt-2">
       Questions? Email{" "}
-      <a className="text-blue-500 hover:underline" href="mailto:justintorre75@gmail.com">
+      <a className="text-blue-400 hover:underline" href="mailto:justintorre75@gmail.com">
         justintorre75@gmail.com
       </a>
       .
