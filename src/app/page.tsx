@@ -61,6 +61,13 @@ const recentProjects: {
   date: Date;
 }[] = [
   {
+    title: "17 versions of this website",
+    description:
+      "I couldn't pick a new homepage design, so I built 17 of them. Scroll through every one.",
+    url: "/overview",
+    date: new Date("2026-07-14T00:00:00"),
+  },
+  {
     title: "Helicone joins Mintlify",
     description:
       "After 3 years, 14T+ tokens processed, and $1M+ ARR, Helicone is joining Mintlify to build the context layer for AI agents.",
