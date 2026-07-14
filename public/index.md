@@ -8,6 +8,15 @@ Founder and engineer. I ran Helicone (YC W23), open-source LLM observability, fr
 
 Building the context layer for AI agents at Mintlify. Helicone joined Mintlify in March 2026.
 
+## Projects
+
+- Mintlify — Building the context layer for AI agents. → https://justintorre.com/projects/mintlify.md
+- Helicone — Open-source LLM observability, YC W23. 14T+ tokens, acquired. → https://justintorre.com/projects/helicone.md
+- Tracer: One Line Puzzle — An iOS puzzle game. One stroke, no lifting your finger. → https://justintorre.com/projects/tracer.md
+- 17 versions of this website — One homepage, seventeen designs, one plain winner. → https://justintorre.com/projects/website-redesigns.md
+- Scale AI Hackathon — 3rd place, with an AI rap battle in the demo. → https://justintorre.com/projects/scale-ai-hackathon.md
+- All projects → https://justintorre.com/projects.md
+
 ## Work
 
 - Jul 2026 — 17 versions of this website. I couldn't pick, so scroll through every one → https://justintorre.com/projects/website-redesigns.md

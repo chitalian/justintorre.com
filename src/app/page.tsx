@@ -64,6 +64,34 @@ const work: Item[] = [
   },
 ];
 
+const projects = [
+  {
+    name: "Mintlify",
+    line: "Building the context layer for AI agents.",
+    href: "/projects/mintlify",
+  },
+  {
+    name: "Helicone",
+    line: "Open-source LLM observability, YC W23. 14T+ tokens, acquired.",
+    href: "/projects/helicone",
+  },
+  {
+    name: "Tracer: One Line Puzzle",
+    line: "An iOS puzzle game. One stroke, no lifting your finger.",
+    href: "/projects/tracer",
+  },
+  {
+    name: "17 versions of this website",
+    line: "One homepage, seventeen designs, one plain winner.",
+    href: "/projects/website-redesigns",
+  },
+  {
+    name: "Scale AI Hackathon",
+    line: "3rd place, with an AI rap battle in the demo.",
+    href: "/projects/scale-ai-hackathon",
+  },
+];
+
 const writing: Item[] = [
   {
     date: "Jul 2026",
@@ -152,6 +180,36 @@ export default function Home() {
             <p className="text-[15px] leading-relaxed">
               Building the context layer for AI agents at Mintlify. Helicone
               joined Mintlify in March 2026.
+            </p>
+          </Section>
+
+          <Section label="Projects">
+            <div>
+              {projects.map((p) => (
+                <Link
+                  key={p.href}
+                  href={p.href}
+                  className="grid grid-cols-[1fr_auto] items-baseline gap-x-4 border-b border-black py-3 rounded-none transition-colors duration-150 hover:bg-neutral-100"
+                >
+                  <span>
+                    <span className="text-[15px] font-semibold">{p.name}</span>
+                    <span className="ml-3 hidden text-sm text-neutral-600 sm:inline">
+                      {p.line}
+                    </span>
+                  </span>
+                  <span aria-hidden="true" className="font-mono text-[13px]">
+                    &rarr;
+                  </span>
+                </Link>
+              ))}
+            </div>
+            <p className="mt-3">
+              <Link
+                href="/projects"
+                className="font-mono text-[12px] text-neutral-500 transition-colors hover:text-black"
+              >
+                all projects &rarr;
+              </Link>
             </p>
           </Section>
 
