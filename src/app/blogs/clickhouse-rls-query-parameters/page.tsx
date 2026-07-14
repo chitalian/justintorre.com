@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { codeToHtml } from "shiki";
 import { posts } from "../posts";
 
 const post = posts.find((p) => p.slug === "clickhouse-rls-query-parameters")!;
@@ -8,6 +9,20 @@ const post = posts.find((p) => p.slug === "clickhouse-rls-query-parameters")!;
 export const metadata: Metadata = {
   title: `${post.title} | Justin Torre`,
   description: post.description,
+  keywords: [
+    "ClickHouse row-level security",
+    "ClickHouse row policy",
+    "ClickHouse RLS",
+    "multi-tenant ClickHouse",
+    "getSetting",
+    "ClickHouse custom settings",
+    "SQL_ prefix",
+    "customer-facing SQL",
+    "HQL",
+    "Helicone",
+    "Justin Torre",
+  ],
+  authors: [{ name: "Justin Torre", url: "https://justintorre.com" }],
   alternates: {
     canonical: `/blogs/${post.slug}`,
   },
@@ -17,13 +32,41 @@ export const metadata: Metadata = {
     type: "article",
     publishedTime: post.date,
     url: `https://justintorre.com/blogs/${post.slug}`,
+    siteName: "Justin Torre",
     authors: ["Justin Torre"],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: post.title,
     description: post.description,
     creator: "@justintorre",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: post.title,
+  description: post.description,
+  datePublished: post.date,
+  dateModified: post.date,
+  url: `https://justintorre.com/blogs/${post.slug}`,
+  mainEntityOfPage: `https://justintorre.com/blogs/${post.slug}`,
+  image: "https://justintorre.com/blog/hql-editor.png",
+  author: {
+    "@type": "Person",
+    name: "Justin Torre",
+    url: "https://justintorre.com",
+    sameAs: [
+      "https://twitter.com/justintorre",
+      "https://github.com/chitalian",
+      "https://www.linkedin.com/in/justintorre/",
+    ],
+  },
+  publisher: {
+    "@type": "Person",
+    name: "Justin Torre",
+    url: "https://justintorre.com",
   },
 };
 
@@ -39,11 +82,16 @@ function H2({ children }: { children: React.ReactNode }) {
   );
 }
 
-function Code({ children }: { children: string }) {
+async function Code({ children, lang }: { children: string; lang: string }) {
+  const html = await codeToHtml(children, {
+    lang,
+    theme: "vesper",
+  });
   return (
-    <pre className="my-6 overflow-x-auto rounded-lg border border-neutral-800 bg-neutral-950 p-4 text-sm leading-relaxed text-neutral-200">
-      <code>{children}</code>
-    </pre>
+    <div
+      className="my-6 overflow-hidden rounded-lg border border-neutral-800 text-sm leading-relaxed [&_pre]:m-0 [&_pre]:overflow-x-auto [&_pre]:p-4"
+      dangerouslySetInnerHTML={{ __html: html }}
+    />
   );
 }
 
@@ -58,6 +106,10 @@ function IC({ children }: { children: React.ReactNode }) {
 export default function ClickhouseRlsPost() {
   return (
     <main className="mx-auto max-w-2xl px-6 py-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <header className="mb-10">
         <Link
           href="/blogs"
@@ -120,7 +172,7 @@ export default function ClickhouseRlsPost() {
           from our migrations: create a unique user that will have the row
           policy, then attach the policy to that user.
         </P>
-        <Code>{`CREATE USER IF NOT EXISTS hql_user;
+        <Code lang="sql">{`CREATE USER IF NOT EXISTS hql_user;
 
 CREATE ROW POLICY hql_organization_filter ON request_response_rmt
     FOR SELECT
@@ -147,7 +199,7 @@ CREATE ROW POLICY hql_organization_filter ON request_response_rmt
           start with a declared prefix. If you self-host, you pick that
           prefix in the server config:
         </P>
-        <Code>{`<clickhouse>
+        <Code lang="xml">{`<clickhouse>
     <custom_settings_prefixes>SQL_</custom_settings_prefixes>
 </clickhouse>`}</Code>
         <P>
@@ -196,7 +248,7 @@ CREATE ROW POLICY hql_organization_filter ON request_response_rmt
           <IC>?SQL_helicone_organization_id=&lt;org&gt;</IC>. The official
           Node client hides that behind <IC>clickhouse_settings</IC>:
         </P>
-        <Code>{`const result = await clickHouseHqlClient.query({
+        <Code lang="ts">{`const result = await clickHouseHqlClient.query({
   query: userSql,
   format: "JSONEachRow",
   clickhouse_settings: {
@@ -226,7 +278,7 @@ CREATE ROW POLICY hql_organization_filter ON request_response_rmt
           hole. On top of that, the app refuses any query that so much as
           mentions the setting name:
         </P>
-        <Code>{`const forbiddenPattern = /sql[_\\s]*helicone[_\\s]*organization[_\\s]*id/i;
+        <Code lang="ts">{`const forbiddenPattern = /sql[_\\s]*helicone[_\\s]*organization[_\\s]*id/i;
 if (forbiddenPattern.test(query)) {
   return err("Query contains a reserved setting name");
 }`}</Code>
@@ -244,7 +296,7 @@ if (forbiddenPattern.test(query)) {
           has ever run, SQL text included. So <IC>hql_user</IC> gets stripped
           down to exactly one grant:
         </P>
-        <Code>{`REVOKE ALL ON system.* FROM hql_user;
+        <Code lang="sql">{`REVOKE ALL ON system.* FROM hql_user;
 REVOKE ALL ON information_schema.* FROM hql_user;
 REVOKE ALL ON default.* FROM hql_user;
 
@@ -275,7 +327,7 @@ GRANT SELECT ON default.request_response_rmt TO hql_user;`}</Code>
           its Postgres one, clamp or insert a LIMIT on the AST, and serialize
           the query back out:
         </P>
-        <Code>{`const ast = parser.astify(sql, { database: "Postgresql" });
+        <Code lang="ts">{`const ast = parser.astify(sql, { database: "Postgresql" });
 const limitedAst = addLimit(normalizeAst(ast)[0], limit);
 firstSql = parser.sqlify(limitedAst, { database: "Postgresql" });`}</Code>
         <P>
@@ -290,6 +342,82 @@ firstSql = parser.sqlify(limitedAst, { database: "Postgresql" });`}</Code>
           Before any of this runs, a validation pass rejects everything that
           isn&apos;t a plain SELECT, along with any table reference outside an
           allowlist that currently contains exactly one name.
+        </P>
+
+        <H2>Subqueries were the scary part</H2>
+        <P>
+          The query shape that made us nervous while designing this was the
+          subquery. If tenancy lives in an app-side rewriter, then{" "}
+          <IC>SELECT * FROM (SELECT * FROM request_response_rmt) AS sub</IC>{" "}
+          is the query that breaks it. Splice{" "}
+          <IC>WHERE organization_id = ?</IC> onto the outer SELECT and
+          you&apos;ve filtered nothing; the inner SELECT already read the
+          whole table. A correct rewriter has to find every table reference
+          in every nested SELECT, every CTE, every UNION branch, and every
+          JOIN operand, then prove it filtered each one.
+        </P>
+        <P>
+          Our own validation code shows the limits of walking queries in the
+          app. The table allowlist works by scanning for FROM and JOIN
+          followed by an identifier, and it deliberately skips anything that
+          opens a parenthesis, because a subquery isn&apos;t a table name.
+          As a guardrail that&apos;s fine. As a security boundary it would be
+          a hole you could drive a UNION through. And when node-sql-parser
+          can&apos;t produce an AST at all, which real ClickHouse queries
+          trigger constantly, there is no tree to walk in the first place.
+        </P>
+        <P>
+          So the test suite mostly attacks the database instead of the
+          parser. <IC>hqlSecurityTests.test.ts</IC> is 843 lines of
+          adversarial queries run against a real ClickHouse instance with the
+          real row policy attached, because a database-enforced guarantee is
+          exactly the thing mocks can&apos;t test. The describe blocks read
+          like a threat model: settings override, system table access,
+          function abuse (<IC>file()</IC>, <IC>url()</IC>, <IC>s3()</IC>,{" "}
+          <IC>mysql()</IC>), UNION attacks, permission escalation, and a
+          section of parsing edge cases where the subquery fear lives:
+        </P>
+        <Code lang="ts">{`it("should handle queries with subqueries", async () => {
+  const query = \`
+    SELECT * FROM (
+      SELECT * FROM request_response_rmt
+      WHERE status = 200
+    ) AS subquery
+    LIMIT 10
+  \`;
+  // every row that comes back must belong to testOrgId
+});
+
+it("should handle CTEs", async () => {
+  const query = \`
+    WITH filtered AS (
+      SELECT * FROM request_response_rmt WHERE status = 200
+    )
+    SELECT * FROM filtered LIMIT 10
+  \`;
+});`}</Code>
+        <P>
+          Self-joins get the same treatment, since{" "}
+          <IC>r1 JOIN request_response_rmt r2</IC> is two table references a
+          rewriter would have to filter separately under different aliases.
+          With the row policy they collapse into one case: the filter applies
+          at read time on the table itself, underneath whatever shape the
+          query takes, so subqueries, CTEs, UNION branches, and aliased joins
+          all inherit it for free. The tests exist to prove that claim, and
+          they pass without the application contributing a single WHERE
+          clause.
+        </P>
+        <P>
+          My favorite test in the file asks ClickHouse to count everyone
+          else&apos;s rows:
+        </P>
+        <Code lang="sql">{`SELECT count(*) as cnt FROM request_response_rmt
+WHERE organization_id != '<my own org id>'
+-- expected result: 0`}</Code>
+        <P>
+          The query is legal, runs cleanly, and counts an empty world. A
+          hostile query under a row policy doesn&apos;t get an error to probe
+          against; there&apos;s simply nothing there.
         </P>
 
         <H2>Failing closed</H2>

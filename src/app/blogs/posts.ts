@@ -13,6 +13,6 @@ export const posts: BlogPost[] = [
     description:
       "How we let Helicone customers run raw SQL against a shared ClickHouse table without ever seeing each other's rows: row policies, custom settings, and an AST parser that is deliberately not part of the security boundary.",
     date: "2026-07-13",
-    readTime: "8 min",
+    readTime: "10 min",
   },
 ];

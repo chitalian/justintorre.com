@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     url: "https://justintorre.com/blogs",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Blog | Justin Torre",
     description: "Engineering notes from building Helicone.",
     creator: "@justintorre",
