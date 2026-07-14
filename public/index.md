@@ -2,8 +2,6 @@
 
 Ex-Founder and engineer. I ran Helicone (YC W23), open-source LLM observability, from first commit to $1M+ ARR. Now I am building an FDE team at Mintlify as their Head of Enterprise Solutions.
 
-14T+ tokens processed · 36M+ end users tracked · 30k+ signups · 5.2k GitHub stars
-
 ## Now
 
 Building the context layer for AI agents at Mintlify. Helicone joined Mintlify in March 2026.

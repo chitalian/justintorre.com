@@ -170,10 +170,6 @@ export default function Home() {
             observability, from first commit to $1M+ ARR. Now I am building an
             FDE team at Mintlify as their Head of Enterprise Solutions.
           </p>
-          <p className="mt-4 font-mono text-[12px] leading-relaxed tabular-nums">
-            14T+ tokens processed &middot; 36M+ end users tracked &middot; 30k+
-            signups &middot; 5.2k GitHub stars
-          </p>
         </header>
 
         <div className="space-y-14">
