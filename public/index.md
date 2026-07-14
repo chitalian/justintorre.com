@@ -9,13 +9,16 @@ Hiring a team to help us build the context layer for AI agents. More info: https
 - Mintlify — Building the context layer for AI agents. → https://justintorre.com/projects/mintlify.md
 - Helicone — Open-source LLM observability, YC W23. 14T+ tokens, acquired. → https://justintorre.com/projects/helicone.md
 
-## Side quests
+## Active side quests
 
 - Tracer: One Line Puzzle — An iOS puzzle game. One stroke, no lifting your finger. → https://justintorre.com/projects/tracer.md
-- 17 versions of this website — One homepage, seventeen designs, one plain winner. → https://justintorre.com/projects/website-redesigns.md
-- Scale AI Hackathon — 3rd place, with an AI rap battle in the demo. → https://justintorre.com/projects/scale-ai-hackathon.md
 - aitrolleyproblem.com — Which model provider would you trust to govern humanity? → https://www.aitrolleyproblem.com
 - offensive-ai-speak — A Claude skill that stops AI from writing slop. → https://github.com/chitalian/offensive-ai-speak
+
+## Completed side quests
+
+- 17 versions of this website — One homepage, seventeen designs, one plain winner. → https://justintorre.com/projects/website-redesigns.md
+- Scale AI Hackathon — 3rd place, with an AI rap battle in the demo. → https://justintorre.com/projects/scale-ai-hackathon.md
 
 ## News
 

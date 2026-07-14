@@ -39,23 +39,11 @@ const mainQuests: Project[] = [
   },
 ];
 
-const sideQuests: Project[] = [
+const activeSideQuests: Project[] = [
   {
     href: "/projects/tracer",
     title: "Tracer: One Line Puzzle",
     line: "An iOS puzzle game. Trace every line in one continuous stroke.",
-    external: false,
-  },
-  {
-    href: "/projects/website-redesigns",
-    title: "17 versions of this website",
-    line: "One homepage, seventeen designs, one very plain winner.",
-    external: false,
-  },
-  {
-    href: "/projects/scale-ai-hackathon",
-    title: "Scale AI Hackathon",
-    line: "3rd place in February 2023, with an AI rap battle in the demo.",
     external: false,
   },
   {
@@ -69,6 +57,21 @@ const sideQuests: Project[] = [
     title: "offensive-ai-speak",
     line: "A Claude skill that stops AI from writing slop.",
     external: true,
+  },
+];
+
+const completedSideQuests: Project[] = [
+  {
+    href: "/projects/website-redesigns",
+    title: "17 versions of this website",
+    line: "One homepage, seventeen designs, one very plain winner.",
+    external: false,
+  },
+  {
+    href: "/projects/scale-ai-hackathon",
+    title: "Scale AI Hackathon",
+    line: "3rd place in February 2023, with an AI rap battle in the demo.",
+    external: false,
   },
 ];
 
@@ -137,10 +140,21 @@ export default function ProjectsPage() {
 
         <section className="border-t border-black pt-4">
           <h2 className="font-mono text-[11px] uppercase tracking-[0.25em]">
-            Side quests
+            Active side quests
           </h2>
           <div className="mt-4">
-            {sideQuests.map((p) => (
+            {activeSideQuests.map((p) => (
+              <ProjectRow key={p.href} project={p} />
+            ))}
+          </div>
+        </section>
+
+        <section className="border-t border-black pt-4">
+          <h2 className="font-mono text-[11px] uppercase tracking-[0.25em]">
+            Completed side quests
+          </h2>
+          <div className="mt-4">
+            {completedSideQuests.map((p) => (
               <ProjectRow key={p.href} project={p} />
             ))}
           </div>

@@ -41,21 +41,11 @@ const mainQuests = [
   },
 ];
 
-const sideQuests = [
+const activeSideQuests = [
   {
     name: "Tracer: One Line Puzzle",
     line: "An iOS puzzle game. One stroke, no lifting your finger.",
     href: "/projects/tracer",
-  },
-  {
-    name: "17 versions of this website",
-    line: "One homepage, seventeen designs, one plain winner.",
-    href: "/projects/website-redesigns",
-  },
-  {
-    name: "Scale AI Hackathon",
-    line: "3rd place, with an AI rap battle in the demo.",
-    href: "/projects/scale-ai-hackathon",
   },
   {
     name: "aitrolleyproblem.com",
@@ -68,6 +58,19 @@ const sideQuests = [
     line: "A Claude skill that stops AI from writing slop.",
     href: "https://github.com/chitalian/offensive-ai-speak",
     external: true,
+  },
+];
+
+const completedSideQuests = [
+  {
+    name: "17 versions of this website",
+    line: "One homepage, seventeen designs, one plain winner.",
+    href: "/projects/website-redesigns",
+  },
+  {
+    name: "Scale AI Hackathon",
+    line: "3rd place, with an AI rap battle in the demo.",
+    href: "/projects/scale-ai-hackathon",
   },
 ];
 
@@ -210,9 +213,17 @@ export default function Home() {
             </div>
           </Section>
 
-          <Section label="Side quests">
+          <Section label="Active side quests">
             <div>
-              {sideQuests.map((p) => (
+              {activeSideQuests.map((p) => (
+                <ProjectRow key={p.href} project={p} />
+              ))}
+            </div>
+          </Section>
+
+          <Section label="Completed side quests">
+            <div>
+              {completedSideQuests.map((p) => (
                 <ProjectRow key={p.href} project={p} />
               ))}
             </div>
