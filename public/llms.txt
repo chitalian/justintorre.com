@@ -1,0 +1,32 @@
+# Justin Torre
+
+> Personal site of Justin Torre: engineer and founder in San Francisco. Head of Enterprise Solutions at Mintlify, building the context layer for AI agents. Previously co-founder and CEO of Helicone (YC W23), open-source LLM observability, acquired by Mintlify in March 2026.
+
+Every page on this site is available as plain markdown by appending `.md` to its path (for example, `/about` is also `/about.md`). The full site content in one file is at [llms-full.txt](https://justintorre.com/llms-full.txt).
+
+## Pages
+
+- [Home](https://justintorre.com/index.md): Who Justin is, what he's shipped, and what he's writing
+- [About](https://justintorre.com/about.md): Bio, full career history (Mintlify, Helicone, Sisu, Apple, co-ops), education at Northeastern, lessons from building Helicone
+- [Projects](https://justintorre.com/projects.md): Index of everything built and shipped
+
+## Projects
+
+- [Helicone](https://justintorre.com/projects/helicone.md): Open-source LLM observability, YC W23. 14T+ tokens processed, $1M+ ARR, acquired by Mintlify in March 2026
+- [Mintlify](https://justintorre.com/projects/mintlify.md): Why Helicone joined Mintlify and what the context layer for AI agents means
+- [Tracer: One Line Puzzle](https://justintorre.com/projects/tracer.md): An iOS one-stroke puzzle game. 60+ solver-verified levels, no ads, no tracking
+- [17 versions of this website](https://justintorre.com/projects/website-redesigns.md): Seventeen homepage designs built in one sitting; the plainest one won
+- [Scale AI Hackathon](https://justintorre.com/projects/scale-ai-hackathon.md): 3rd place in February 2023 with an AI rap battle that made the local paper
+
+## Writing
+
+- [Blog index](https://justintorre.com/blogs.md): All posts
+- [Allowing your users to query ClickHouse directly using raw SQL](https://justintorre.com/blogs/clickhouse-rls-query-parameters.md): Row-level security with query parameters, row policies, the SQL_ prefix, and why AST walking is not a security boundary
+- [Six models, one trolley: building the AI Trolley Problem Arena](https://justintorre.com/blogs/ai-trolley-problem.md): Forcing GPT, Claude, Gemini, Llama, Grok, and DeepSeek to answer trolley problems via forced tool calls
+
+## Optional
+
+- [Videos](https://justintorre.com/videos.md): Drone builds and college-era projects
+- [Tracer privacy policy](https://justintorre.com/apps/tracer/privacy): Tracer collects nothing
+- [GitHub](https://github.com/chitalian): Code, including this site and offensive-ai-speak
+- [X](https://x.com/justinstorre): Day-to-day updates

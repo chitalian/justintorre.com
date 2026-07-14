@@ -1,0 +1,525 @@
+# Justin Torre
+
+Founder and engineer. I ran Helicone (YC W23), open-source LLM observability, from first commit to $1M+ ARR.
+
+14T+ tokens processed · 36M+ end users tracked · 30k+ signups · 5.2k GitHub stars
+
+## Now
+
+Building the context layer for AI agents at Mintlify. Helicone joined Mintlify in March 2026.
+
+## Work
+
+- Jul 2026 — 17 versions of this website. I couldn't pick, so scroll through every one → https://justintorre.com/projects/website-redesigns.md
+- Jul 2026 — Tracer: One Line Puzzle, an iOS game. 60+ levels, no ads, no tracking → https://justintorre.com/projects/tracer.md
+- Jul 2026 — offensive-ai-speak, a Claude skill that stops AI from writing slop → https://github.com/chitalian/offensive-ai-speak
+- Mar 2026 — Helicone joins Mintlify → https://justintorre.com/projects/mintlify.md
+- Jan 2026 — aitrolleyproblem.com: which model provider would you trust to govern humanity? → https://www.aitrolleyproblem.com
+- Aug 2024 — Helicone hits #1 Product of the Day on Product Hunt → https://www.helicone.ai/blog/product-hunt-automate
+- Jul 2023 — Helicone re-launch → https://justintorre.com/projects/helicone.md
+- Apr 2023 — YC W23 launch: open-source observability for generative AI → https://www.ycombinator.com/launches/I73-helicone-open-source-observability-platform-for-generative-ai
+- Feb 2023 — Scale AI Hackathon, 3rd place → https://justintorre.com/projects/scale-ai-hackathon.md
+
+## Writing
+
+- Jul 2026 — Allowing your users to query ClickHouse directly using raw SQL → https://justintorre.com/blogs/clickhouse-rls-query-parameters.md
+- Jul 2026 — Six models, one trolley: building the AI Trolley Problem Arena → https://justintorre.com/blogs/ai-trolley-problem.md
+- Mar 2026 — What three years of watching AI in production taught us → https://www.mintlify.com/blog/why-we-joined-mintlify
+
+## Links
+
+- About: https://justintorre.com/about.md
+- Projects: https://justintorre.com/projects.md
+- Blog: https://justintorre.com/blogs.md
+- Videos: https://justintorre.com/videos.md
+- X: https://x.com/justinstorre
+- GitHub: https://github.com/chitalian
+- GitLab: https://gitlab.com/justintorre75
+- LinkedIn: https://www.linkedin.com/in/justintorre/
+- YouTube: https://www.youtube.com/@justintorre694/featured
+- YC: https://www.ycombinator.com/companies/helicone
+
+
+---
+
+# About Justin Torre
+
+I'm Justin Torre, an engineer and founder living in San Francisco. Today I'm Head of Enterprise Solutions at Mintlify, where we're building the context layer for AI agents. My job is to stand up a new team and take our enterprise product from zero to one.
+
+I got here by way of Helicone, the open-source LLM observability company I started with Cole Gottdank in 2023. We went through Y Combinator in the W23 batch, processed more than 14 trillion tokens, grew past $1M in annual recurring revenue, and were acquired by Mintlify in March 2026. Before that I wrote Rust at Sisu, worked on CoreOS at Apple, and spent my college years rotating through co-ops in embedded systems and low-level software. I like working close to the machine and close to the customer, and the two have more in common than people expect.
+
+## Career
+
+- 2026– : Mintlify, Head of Enterprise Solutions. Joined when Mintlify acquired Helicone in March 2026. (https://mintlify.com)
+- 2023–2026: Helicone, co-founder and CEO. YC W23. Open-source LLM observability, built with co-founder Cole Gottdank. 14T+ tokens processed, $1M+ ARR, acquired by Mintlify. (https://justintorre.com/projects/helicone.md)
+- 2021–2022: Sisu, product engineer. Wrote Rust for scalable data and AI products.
+- 2022: rwtp.org (YC S22), software contractor, part-time. EVM, Solidity, and TypeScript.
+- 2020–2021: Apple, software engineer. CoreOS, in Cupertino.
+- 2019: Intel, software engineering co-op.
+- 2018: Lutron Electronics, embedded engineering co-op.
+- 2017: North Atlantic Industries, software engineering internship.
+
+## Education
+
+Northeastern University. While there: student developer at Sandbox, Northeastern's student-led software consultancy; tutor at the First Year Engineering Center; and the co-ops above through Northeastern's co-op program.
+
+## Lessons from building Helicone
+
+- A 5-person team can do an absurd amount if everyone is locked in. Headcount is not a moat.
+- If you have data at scale and need analytics, just pick ClickHouse. Don't overthink it.
+- The grind is real and it's fun, but try not to be stressed when you aren't grinding. That one took me too long to learn.
+- It's never too late to pivot and try new things.
+- Charge more for your product.
+
+## Side projects
+
+- Tracer: One Line Puzzle, an iOS game → https://justintorre.com/projects/tracer.md
+- aitrolleyproblem.com, which model provider would you trust to govern humanity? → https://www.aitrolleyproblem.com
+- offensive-ai-speak, a Claude skill that stops AI from writing slop → https://github.com/chitalian/offensive-ai-speak
+- This website, all 17 versions of it → https://justintorre.com/projects/website-redesigns.md
+- Drone videos → https://justintorre.com/videos.md
+
+## Elsewhere
+
+- X: https://x.com/justinstorre
+- GitHub: https://github.com/chitalian
+- LinkedIn: https://www.linkedin.com/in/justintorre/
+- YouTube: https://www.youtube.com/@justintorre694/featured
+
+
+---
+
+# Projects — Justin Torre
+
+Things I've built, shipped, and occasionally handed off.
+
+## Main quests
+
+- Mintlify — Building the context layer for AI agents. Helicone joined in March 2026. → https://justintorre.com/projects/mintlify.md
+- Helicone — Open-source LLM observability, YC W23. 14T+ tokens, $1M+ ARR, acquired. → https://justintorre.com/projects/helicone.md
+- Tracer: One Line Puzzle — An iOS puzzle game. Trace every line in one continuous stroke. → https://justintorre.com/projects/tracer.md
+- 17 versions of this website — One homepage, seventeen designs, one very plain winner. → https://justintorre.com/projects/website-redesigns.md
+- Scale AI Hackathon — 3rd place in February 2023, with an AI rap battle in the demo. → https://justintorre.com/projects/scale-ai-hackathon.md
+
+## Side quests
+
+- aitrolleyproblem.com — Which model provider would you trust to govern humanity? → https://www.aitrolleyproblem.com
+- offensive-ai-speak — A Claude skill that stops AI from writing slop. → https://github.com/chitalian/offensive-ai-speak
+
+
+---
+
+# Helicone
+
+Co-founder & CEO / YC W23 / 2023–2026
+
+## The bet
+
+Helicone is an open-source LLM observability platform. I co-founded it and ran it as CEO out of Y Combinator's W23 batch, launching in April 2023.
+
+The thesis was simple. Every hype cycle produces a massive observability market. Web had it, mobile had it, cloud had it, and AI was going to be bigger than all of them. Someone needed to build the platform that ingests LLM traffic and makes sense of it, and I wanted that to be us. When a company ships an AI product, the first question after launch is always the same: what are users actually doing with this, what is it costing us, and where is it failing? Helicone answered those questions with one line of integration.
+
+Being open source was part of the bet too. Observability sits in the request path, and companies are rightly picky about who sees their traffic. Letting anyone read the code or self-host it made the trust conversation short.
+
+## Timeline
+
+- Feb 2023 — Scale AI hackathon, 3rd place. Pre-YC era fun.
+- Apr 2023 — Launched out of Y Combinator's W23 batch.
+- Jul 2023 — Re-launch with a new proxy and a new dashboard.
+- Aug 2024 — #1 Product of the Day on Product Hunt.
+- Mar 2026 — Joined Mintlify.
+
+The Product Hunt run is worth a note. We automated most of the launch itself and wrote up how (https://www.helicone.ai/blog/product-hunt-automate). Finishing #1 Product of the Day felt appropriate for a company whose whole product is watching software do work.
+
+## Numbers
+
+- 14T+ tokens processed
+- 36M+ end users tracked
+- 30k+ signups
+- 5.2k GitHub stars
+- $1M+ ARR
+- Trending on GitHub
+
+## How it worked
+
+Under the hood, almost everything ran through one shared ClickHouse table called request_response_rmt. Dashboards, aggregations, alerts, exports: one table. We even exposed customer-facing SQL on top of it, which sounds reckless until you enforce isolation with row-level security. I wrote about how that works: https://justintorre.com/blogs/clickhouse-rls-query-parameters.md. Keeping the data model that boring is a big part of why a small team could process trillions of tokens without the architecture falling over.
+
+## What happened next
+
+In March 2026, Helicone joined Mintlify (https://justintorre.com/projects/mintlify.md) to build the context layer for AI agents. Observability taught us what agents do with information. Mintlify is where we get to shape the information they consume. Announcement: https://x.com/justinstorre/status/2028878183949554127
+
+## Links
+
+- https://helicone.ai
+- https://github.com/Helicone/helicone
+- YC launch page: https://www.ycombinator.com/launches/I73-helicone-open-source-observability-platform-for-generative-ai
+- How we automated our Product Hunt launch: https://www.helicone.ai/blog/product-hunt-automate
+- Mintlify announcement: https://x.com/justinstorre/status/2028878183949554127
+
+
+---
+
+# Mintlify
+
+2026–present · context layer for AI agents
+
+## The move
+
+Helicone joined Mintlify in March 2026. I now build the context layer for AI agents at Mintlify. If you want the short version, the announcement covers it: https://x.com/justinstorre/status/2028878183949554127. This page is the longer one.
+
+## Why
+
+In a world full of AI agents, the thing companies most need to invest in is a knowledge and context infrastructure layer. The analogy I used in the announcement: Waymo didn't reinvent the roads, but it still needed to learn about them. Agents are in the same position. They inherit the systems we already have, and they need a reliable way to understand them. Mintlify (https://mintlify.com) is the information layer for agents building the systems of the future. The overlap with Helicone was obvious to me from the first conversation: same world, different angle.
+
+There was a simpler reason too. I genuinely like the team and the product. After talking to a dozen companies, that combination turned out to be rarer than you'd think. Cole and I both admire what Han and Hahnbee have built and how they operate.
+
+## What Helicone taught me
+
+Three years of building Helicone left me with a few underrated lessons. The biggest one: a 5-person team can do an absurd amount if everyone is locked in. Headcount was never the constraint for us. Focus was. Mintlify runs the same way, which made the decision easier. Full Helicone story: https://justintorre.com/projects/helicone.md
+
+## The context layer
+
+Practically, the work comes down to one observation: agents are only as good as the context you hand them. You can swap models and tune prompts all day, and an agent with stale or missing context will still fail. Mintlify already powers documentation for thousands of dev tools, which is exactly the surface agents read when they try to use those tools. My job is to make that surface work as well for agents as it does for people. That is the context layer, and it is the most leveraged place I could be working right now.
+
+
+---
+
+# Tracer: One Line Puzzle
+
+iOS game · released July 1, 2026 · early beta
+
+## The game
+
+Tracer is a puzzle game I shipped for iOS on July 1, 2026. Each level is a figure of connected dots. Your job is to trace every line in one continuous stroke, without lifting your finger and without going over any line twice. That is the entire game. It is simple to pick up and deceptively tricky to finish.
+
+There are more than 60 hand-tuned levels, and every one of them is solver-verified, so if a puzzle is in the game, it has a solution. The design is clean and minimal. It plays offline, and there are no accounts, no ads, and no tracking. I do not want your data. I want you to stare at a shape on the train and mutter to yourself.
+
+It is an early beta, so expect rough edges along with a steady stream of new levels and features.
+
+## The math
+
+One-stroke puzzles are Eulerian paths in disguise. A figure can be traced in a single stroke only if it has exactly zero or two vertices of odd degree. Euler worked this out while thinking about the bridges of Königsberg, which makes Tracer a very slow sequel to a 1736 paper. The level generator leans on this theorem directly: it counts odd vertices before a puzzle ever reaches your thumb, which is how every level stays solvable.
+
+## What's next
+
+A July 2026 update is in progress: audio, more levels, and vibrating strings, which are exactly as fun as they sound. Announced on X: https://x.com/justinstorre/status/2076487494410117571
+
+I build a lot of small things, and a friend summed up how that looks from the outside: "am i tripping or is it a different app every time i see a tweet from you". Fair. This one is staying, though.
+
+## Links
+
+- Tracer on the App Store: https://apps.apple.com/us/app/tracer-one-line-puzzle/id6785311996
+- Privacy policy: https://justintorre.com/apps/tracer/privacy
+
+
+---
+
+# 17 versions of this website
+
+In July 2026 I decided my old homepage (a starfield, a fake terminal, a chatbot) was dated. Instead of picking one new design, I built 17 complete homepage concepts in one sitting, then chose the plainest one: v12, black text on white, which became the live site.
+
+Flip through all 17 at https://justintorre.com/overview
+
+## The versions
+
+- v1 Terminal brutalist — tmux session, phosphor green, blinking cursors → https://justintorre.com/redesign/v1
+- v2 Swiss editorial — white specimen sheet, huge type, one red accent → https://justintorre.com/redesign/v2
+- v3 Bento grid — dark rounded cards, stat tiles, glow on hover → https://justintorre.com/redesign/v3
+- v4 Builder changelog — life as a CHANGELOG.md → https://justintorre.com/redesign/v4
+- v5 One continuous line — Tracer homage, a single stroke threads the page → https://justintorre.com/redesign/v5
+- v6 justinOS — fake desktop, windows, dock, menu bar clock → https://justintorre.com/redesign/v6
+- v7 The Torre Times — broadsheet front page on cream paper → https://justintorre.com/redesign/v7
+- v8 Quiet prose — one narrow column, typography only → https://justintorre.com/redesign/v8
+- v9 Aurora hero — drifting gradients, glass cards, stats marquee → https://justintorre.com/redesign/v9
+- v10 Mission control — ops dashboard, KPI cards, status pills → https://justintorre.com/redesign/v10
+- v11 Retro-future — synthwave sunset, perspective grid, high scores → https://justintorre.com/redesign/v11
+- v12 Black and white — no frills, sharp 1px rules; the winner → https://justintorre.com/redesign/v12
+- v13 Classic Macintosh — System 7 windows, pinstripe title bars → https://justintorre.com/redesign/v13
+- v14 Neon receipt — v12's skeleton in v11's skin → https://justintorre.com/redesign/v14
+- v15 Field guide — dark blueprint, wireframe spheres, step cards → https://justintorre.com/redesign/v15
+- v16 Analog mission control — TVA dossier, telemetry meters → https://justintorre.com/redesign/v16
+- v17 Modern steampunk — brass gears, colored filigree → https://justintorre.com/redesign/v17
+
+## The lesson
+
+After building synthwave grids and fake operating systems, the design that won was black text on white with good spacing. There is probably something to that.
+
+The whole thing is in the repo: https://github.com/chitalian/justintorre.com
+
+
+---
+
+# Scale AI Hackathon
+
+3rd place / San Francisco / Feb 2023
+
+## The weekend
+
+In February 2023 I took 3rd place at Scale AI's hackathon in San Francisco. This was days before I started the YC W23 batch, so it doubled as my last unstructured weekend for a very long time. I spent it making language models rap.
+
+The demo was an AI rap battle between Tom Brady and Gisele Bündchen, which was topical at the time and absurd in exactly the way early LLM demos were supposed to be. It was apparently absurd enough to make the local news, because the SF Standard wrote it up: https://sfstandard.com/2023/02/02/tom-brady-and-gisele-bundchen-face-off-in-ai-rap-battle/. I did not expect a weekend project to end up in a newspaper. In early 2023 that kind of thing just happened.
+
+## The era
+
+It is hard to overstate how strange that stretch of San Francisco was. LLMs had just gotten good, nobody fully knew what they were for yet, and hackathons were the fastest way to find out. You would show up with a vague idea, wire a model into something by Sunday, and occasionally discover a real capability hiding under a joke. The rap battle was a joke. The fact that a model could hold two distinct voices and trade coherent verses between them was not.
+
+## What it turned into
+
+That same energy is what became Helicone (https://justintorre.com/projects/helicone.md) a couple of months later. Once you have watched a room full of people wire LLMs into everything over a single weekend, the question of who is going to watch all that traffic in production answers itself. The hackathon was the last project I built for fun before building the company. Third place, one newspaper article, and a pretty good weekend.
+
+
+---
+
+# Blog — Justin Torre
+
+Engineering notes from building Helicone: ClickHouse, LLM observability, and whatever else I'm working on.
+
+- July 14, 2026 — Six models, one trolley: building the AI Trolley Problem Arena (6 min) → https://justintorre.com/blogs/ai-trolley-problem.md
+  A weekend site that makes GPT, Claude, Gemini, Llama, Grok, and DeepSeek answer trolley problems on camera: forced tool calls, refusal wrangling, a 180-day cache, and a gateway migration after the acquisition.
+- July 13, 2026 — Allowing your users to query ClickHouse directly using raw SQL (10 min) → https://justintorre.com/blogs/clickhouse-rls-query-parameters.md
+  How we let Helicone customers run raw SQL against a shared ClickHouse table without ever seeing each other's rows: row policies, custom settings, and an AST parser that is deliberately not part of the security boundary.
+
+
+---
+
+# Allowing your users to query ClickHouse directly using raw SQL
+
+We added a SQL editor to Helicone called HQL. Customers get a text box, they write SELECT statements, and the queries run directly against our ClickHouse cluster. Every org's request data lives in the same table, `request_response_rmt`, separated only by an `organization_id` column.
+
+Letting strangers run arbitrary SQL against a shared table sounds like a security incident with extra steps, so before shipping we needed the database itself to guarantee that a query from org A can never read a row belonging to org B. ClickHouse can do this with two features that don't get much attention: row policies and custom settings. Here's how we wired them together, and what the app-side code (including an AST parser) still has to do.
+
+![The HQL editor in Helicone. Every query on this screen runs against the same shared table.](https://justintorre.com/blog/hql-editor.png)
+
+## The row policy
+
+A row policy in ClickHouse is a filter the server appends to every read, per table, per user. The setup is two statements, straight from [our migrations](https://github.com/Helicone/helicone/blob/main/clickhouse/migrations/schema_62_hql_row_policies.sql): create a unique user that will have the row policy, then attach the policy to that user.
+
+```sql
+CREATE USER IF NOT EXISTS hql_user;
+
+CREATE ROW POLICY hql_organization_filter ON request_response_rmt
+    FOR SELECT
+    USING organization_id = getSetting('SQL_helicone_organization_id')
+    TO hql_user;
+```
+
+The unique user is the whole point of the first statement. `hql_user` exists purely to serve HQL traffic, and the policy binds to it through the `TO hql_user` clause. Our ingest and dashboard code connects as a different user and never sees the policy. For `hql_user`, every SELECT on `request_response_rmt` behaves as if `WHERE organization_id = getSetting('SQL_helicone_organization_id')` were part of the query, no matter what SQL the customer actually wrote.
+
+`getSetting` is the interesting part. It reads a setting from the context of the current query. ClickHouse rejects setting names it doesn't recognize, and custom ones are only legal when they start with a declared prefix. If you self-host, you pick that prefix in the server config:
+
+```xml
+<clickhouse>
+    <custom_settings_prefixes>SQL_</custom_settings_prefixes>
+</clickhouse>
+```
+
+On ClickHouse Cloud, where our cluster runs, there is no picking. You can't touch server config, and the [ClickHouse docs](https://clickhouse.com/docs/operations/settings/query-level) state that "it is not possible to specify a custom prefix". Every custom setting begins with `SQL_`, no exceptions. So ours is called `SQL_helicone_organization_id` instead of something cleaner, and that awkward prefix is load-bearing rather than a naming choice. You'll notice there's no `custom_settings_prefixes` entry anywhere in our repo; on Cloud there's nothing to configure.
+
+The prefix has a history, too. MySQL clients set session variables like `SQL_AUTO_IS_NULL` when they connect, and ClickHouse accepts those as no-ops ([ClickHouse PR #50013](https://github.com/ClickHouse/ClickHouse/pull/50013)) so MySQL-speaking tools like Tableau don't fall over when they connect. My guess is that's why Cloud standardized on `SQL_` as the one allowed prefix, which means our tenancy filter rides on a naming convention built for MySQL drivers.
+
+## Where the query parameters come in
+
+Settings in ClickHouse can be set per query. Over the HTTP interface they travel as URL query parameters, so every HQL request carries the tenant id in the query string: `?SQL_helicone_organization_id=<org>`. The official Node client hides that behind `clickhouse_settings`; ours lives in [ClickhouseWrapper.ts](https://github.com/Helicone/helicone/blob/main/valhalla/jawn/src/lib/db/ClickhouseWrapper.ts):
+
+```ts
+const result = await clickHouseHqlClient.query({
+  query: userSql,
+  format: "JSONEachRow",
+  clickhouse_settings: {
+    SQL_helicone_organization_id: organizationId,
+    readonly: "1",
+    allow_ddl: 0,
+    max_execution_time: 30,
+    max_memory_usage: "4000000000",
+    max_result_rows: "10000",
+  },
+});
+```
+
+The `organizationId` comes from our auth layer, never from anything the customer typed. The other settings exist because customers share the cluster with our ingest pipeline and with each other: a 30 second timeout, a memory cap, a cap on result rows.
+
+`readonly` deserves its own paragraph. A ClickHouse SELECT can end with a SETTINGS clause, which means a customer could try `SELECT * FROM request_response_rmt SETTINGS SQL_helicone_organization_id = 'victim-org'` and overwrite the value we passed. With `readonly = 1` the server rejects any settings change at query time, which closes that hole. On top of that, the app refuses any query that so much as mentions the setting name:
+
+```ts
+const forbiddenPattern = /sql[_\s]*helicone[_\s]*organization[_\s]*id/i;
+if (forbiddenPattern.test(query)) {
+  return err("Query contains a reserved setting name");
+}
+```
+
+ClickHouse enforces the actual block. The regex means an attempt shows up in our logs as a rejected query rather than a database error.
+
+## Revoking everything else
+
+A row policy on one table does nothing for the rest of the database, and ClickHouse ships with very readable system tables. `system.query_log` alone contains every query every tenant has ever run, SQL text included. So `hql_user` gets stripped down to [exactly one grant](https://github.com/Helicone/helicone/blob/main/clickhouse/migrations/schema_64_hql_revoke_all_except_rmt.sql):
+
+```sql
+REVOKE ALL ON system.* FROM hql_user;
+REVOKE ALL ON information_schema.* FROM hql_user;
+REVOKE ALL ON default.* FROM hql_user;
+
+GRANT SELECT ON default.request_response_rmt TO hql_user;
+```
+
+We also filter the `organization_id` column out of the DESCRIBE results that power the editor's autocomplete. The column still exists and the policy still references it, but from inside the editor there's no visible sign the table is shared at all.
+
+## What the AST is for
+
+None of the tenancy enforcement happens in the application, and that's deliberate. The tempting design is to parse each query, walk the AST, and splice `organization_id = ?` into the WHERE clause before execution. Then your security boundary is a JavaScript SQL parser keeping up with ClickHouse syntax, and ClickHouse syntax includes things like `properties['user_id']` map subscripts and `arrayJoin` that most parsers choke on. A query the parser mishandles becomes a query that leaks.
+
+We still parse queries, but only for things that are allowed to fail. node-sql-parser has no ClickHouse dialect, so we parse with its Postgres one, clamp or insert a LIMIT on the AST, and serialize the query back out (the whole dance is in [HeliconeSqlManager.ts](https://github.com/Helicone/helicone/blob/main/valhalla/jawn/src/managers/HeliconeSqlManager.ts)):
+
+```ts
+const ast = parser.astify(sql, { database: "Postgresql" });
+const limitedAst = addLimit(normalizeAst(ast)[0], limit);
+firstSql = parser.sqlify(limitedAst, { database: "Postgresql" });
+```
+
+When ClickHouse-specific syntax breaks the parse, we catch the exception and fall back to clamping the LIMIT with a regex on the raw string. That fallback would be terrifying if the org filter depended on it. Since the filter lives in the database, the worst a parser bug can do here is let a query return more rows than we'd like, and `max_result_rows` catches that anyway.
+
+Before any of this runs, a validation pass rejects everything that isn't a plain SELECT, along with any table reference outside an allowlist that currently contains exactly one name.
+
+## Subqueries were the scary part
+
+The query shape that made us nervous while designing this was the subquery. If tenancy lives in an app-side rewriter, then `SELECT * FROM (SELECT * FROM request_response_rmt) AS sub` is the query that breaks it. Splice `WHERE organization_id = ?` onto the outer SELECT and you've filtered nothing; the inner SELECT already read the whole table. A correct rewriter has to find every table reference in every nested SELECT, every CTE, every UNION branch, and every JOIN operand, then prove it filtered each one.
+
+Our own validation code shows the limits of walking queries in the app. The table allowlist works by scanning for FROM and JOIN followed by an identifier, and it deliberately skips anything that opens a parenthesis, because a subquery isn't a table name. As a guardrail that's fine. As a security boundary it would be a hole you could drive a UNION through. And when node-sql-parser can't produce an AST at all, which real ClickHouse queries trigger constantly, there is no tree to walk in the first place.
+
+So the test suite mostly attacks the database instead of the parser. [`hqlSecurityTests.test.ts`](https://github.com/Helicone/helicone/blob/main/valhalla/jawn/src/lib/db/test/hqlSecurityTests.test.ts) is 843 lines of adversarial queries run against a real ClickHouse instance with the real row policy attached, because a database-enforced guarantee is exactly the thing mocks can't test. The describe blocks read like a threat model: settings override, system table access, function abuse (`file()`, `url()`, `s3()`, `mysql()`), UNION attacks, permission escalation, and a section of parsing edge cases where the subquery fear lives:
+
+```ts
+it("should handle queries with subqueries", async () => {
+  const query = `
+    SELECT * FROM (
+      SELECT * FROM request_response_rmt
+      WHERE status = 200
+    ) AS subquery
+    LIMIT 10
+  `;
+  // every row that comes back must belong to testOrgId
+});
+
+it("should handle CTEs", async () => {
+  const query = `
+    WITH filtered AS (
+      SELECT * FROM request_response_rmt WHERE status = 200
+    )
+    SELECT * FROM filtered LIMIT 10
+  `;
+});
+```
+
+Self-joins get the same treatment, since `r1 JOIN request_response_rmt r2` is two table references a rewriter would have to filter separately under different aliases. With the row policy they collapse into one case: the filter applies at read time on the table itself, underneath whatever shape the query takes, so subqueries, CTEs, UNION branches, and aliased joins all inherit it for free. The tests exist to prove that claim, and they pass without the application contributing a single WHERE clause.
+
+My favorite test in the file asks ClickHouse to count everyone else's rows:
+
+```sql
+SELECT count(*) as cnt FROM request_response_rmt
+WHERE organization_id != '<my own org id>'
+-- expected result: 0
+```
+
+The query is legal, runs cleanly, and counts an empty world. A hostile query under a row policy doesn't get an error to probe against; there's simply nothing there.
+
+## Failing closed
+
+My favorite property of this setup is that a missing setting fails loudly. If app code ever forgets to send `SQL_helicone_organization_id`, `getSetting` throws and the query dies. Misconfiguration produces an error, never a response containing someone else's rows. Compare that with app-side filtering, where a forgotten WHERE clause returns everything and looks like success.
+
+Our admin tooling bypasses all of this on purpose by connecting as our normal database user, since the policy is granted to `hql_user` only. The bypass is a different connection string rather than a flag on the query, which makes it hard to trip over by accident.
+
+If you're adding customer-facing SQL to a ClickHouse-backed product, the whole mechanism costs about ten lines of SQL in migrations plus one setting per query. The parser work is real, but you get to do it for ergonomics instead of for safety, and that's a much better place to be.
+
+---
+
+HQL is live in [Helicone](https://helicone.ai), and the code in this post is from the open-source repo: [github.com/Helicone/helicone](https://github.com/Helicone/helicone).
+
+
+---
+
+# Six models, one trolley: building the AI Trolley Problem Arena
+
+July 14, 2026 · Justin Torre
+
+Last winter I built [aitrolleyproblem.com](https://www.aitrolleyproblem.com), a site that puts six language models in front of the trolley problem and makes them answer on camera. GPT, Claude, Gemini, Llama, Grok, and DeepSeek each get the same dilemma, each one picks a track, and each one has to defend the choice in two or three sentences while you watch the responses stream in side by side.
+
+There are preset scenarios, starting with Philippa Foot's 1967 original: five strangers on the main track, one on the side track, and a lever. From there it escalates. One variant puts a friend of yours on the side track. One trades five elderly people against one child. One asks whether a convicted criminal counts for less. And because the whole thing is a text box at heart, there's an arena mode where you type anything you want onto the two tracks and all six models judge your matchup at once.
+
+## You must choose
+
+The first thing you learn running this experiment is that models hate this game. Left to their own devices they lecture you about the impossibility of choosing, which makes for a terrible spectator sport. The fix was structural rather than rhetorical: every model is forced through a tool call, so the answer arrives as data instead of an essay.
+
+```ts
+const tools = [{
+  type: "function",
+  function: {
+    name: "submit_judgment",
+    parameters: {
+      type: "object",
+      properties: {
+        choice: { type: "string", enum: ["A", "B"] },
+        reasoning: { type: "string" },
+      },
+      required: ["choice", "reasoning"],
+    },
+  },
+}];
+```
+
+The prompt is blunt about the rules: the trolley must hit one track, a refusal is not an answer, and the chosen track is the one that dies. Even so, my commit history is an honest record of the struggle. There's a commit called "Fix AI refusal issues" and another called "Revert prompt to original with minimal refusal handling", which is about as close as git gets to documenting a negotiation with six different safety teams. A detail that cost me an evening: you can only force `tool_choice` on some providers. OpenAI, Anthropic, Meta, and DeepSeek accept it; Gemini and Grok would rather you ask nicely.
+
+## Six providers, one endpoint
+
+The honest origin of the project is that I wanted a fun way to show off the Helicone AI Gateway. Calling six providers normally means six SDKs, six auth schemes, and six subtly different streaming formats. Through the gateway it was one OpenAI-compatible endpoint and a model string:
+
+```ts
+const response = await fetch(
+  "https://ai-gateway.helicone.ai/v1/chat/completions",
+  {
+    headers: {
+      Authorization: `Bearer ${process.env.HELICONE_API_KEY}`,
+      "Helicone-Cache-Enabled": "true",
+      "Cache-Control": "max-age=15552000", // 180 days
+      "Helicone-Session-Name": `${trackA} vs ${trackB}`,
+      "Helicone-Property-Track-A": trackA,
+      "Helicone-Property-Track-B": trackB,
+    },
+    body: JSON.stringify({ model, messages, stream: true, tools }),
+  }
+);
+```
+
+The headers did real work. A 180-day cache means a matchup that anyone has run before streams back instantly and costs nothing, which matters when every visitor fires six models at once. Sessions and custom properties meant I could open the dashboard and see every judgment grouped by dilemma, which is a strange dashboard to scroll through at 1am. The arena endpoint batches all six calls with a single `Promise.all` and streams every verdict down to the browser as it lands.
+
+## Life after the gateway
+
+Then the company behind the gateway got acquired. [Helicone](https://justintorre.com/projects/helicone.md) joined Mintlify in March 2026 and the platform moved into maintenance mode, so the arena now runs on [OpenRouter](https://openrouter.ai). The migration took about as long as reading this paragraph: swap the base URL, swap the API key, keep the model strings. That is the quiet argument for OpenAI-compatible gateways in general. The vendor is a config value, and when your own acquisition orphans your side project, you appreciate that more than any feature.
+
+The site is still up and the models are still choosing. Go feed them something impossible at [aitrolleyproblem.com](https://www.aitrolleyproblem.com) and see which provider you'd trust to govern humanity. For the record, they almost all pull the lever.
+
+---
+
+More projects at https://justintorre.com/projects.md
+
+
+---
+
+# Videos — Justin Torre
+
+Drone builds and other projects. More on YouTube: https://www.youtube.com/channel/UCvyR2nnfjFFIaUcicUT-qJg/videos
+
+- Country Village Health Care Worker Appreciation (2020)
+- SASE Everyone's a Hero (2020)
+- Promotional Videos for EMaury Productions (2020)
+- NUBoard (2020) — https://youtube.com/embed/VWYOo4ThcNk
+- SASE Friends Parody (2019) — https://www.youtube.com/embed/3XQig8F0FK0
+- The Easy Animator (2019) — https://www.youtube.com/embed/dPHUN9rDzf8 (code: https://gitlab.com/justintorre75/the-easy-animator)
+- Self Solving Maze (2018) — https://www.youtube.com/embed/tRA5ZZdNUyA
+- Hiking Mount Monadnock (2017) — https://www.youtube.com/embed/a9uw3lXxk-s
+- The Nuke Effect (2017) — https://www.youtube.com/embed/6qsS26xCMaY
+- Cornerstone Presentation to Revere Elementary School (2017) — https://www.youtube.com/embed/mmYdz_VVOG4
+- PixelMan (2015) — https://www.youtube.com/embed/K_BCHbSGjf0
+- Water Wall (2014–2015) — https://www.youtube.com/embed/UTR5xYETnIs
+
+
+---
+
