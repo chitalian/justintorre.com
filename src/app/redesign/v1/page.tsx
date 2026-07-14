@@ -241,7 +241,7 @@ export default function TerminalHome() {
                   >
                     Mintlify
                   </a>
-                  . Helicone joined Mintlify in July 2026.
+                  . Helicone joined Mintlify in March 2026.
                 </p>
               </div>
 

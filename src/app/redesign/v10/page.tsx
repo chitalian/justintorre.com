@@ -223,8 +223,7 @@ export default function MissionControl() {
             <span className="text-slate-200">Mintlify</span>. Before that,
             co-founder and CEO of{" "}
             <span className="text-slate-200">Helicone</span> (YC W23),
-            open-source LLM observability. Helicone joined Mintlify in July
-            2026.
+            open-source LLM observability. Helicone joined Mintlify in March 2026.
           </p>
         </section>
 

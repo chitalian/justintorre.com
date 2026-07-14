@@ -161,7 +161,7 @@ export default function RedesignV2() {
             <SectionLabel n="01" name="now" />
             <div className="col-span-12 md:col-span-9">
               <p className="max-w-2xl text-2xl font-medium leading-snug tracking-tight md:text-3xl">
-                Helicone joined Mintlify in July 2026. Same problem from a new
+                Helicone joined Mintlify in March 2026. Same problem from a new
                 angle: agents are only as good as the context you hand them.
               </p>
               <div className="mt-12 grid grid-cols-2 gap-px bg-neutral-200 sm:grid-cols-3 lg:grid-cols-5">

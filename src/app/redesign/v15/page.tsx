@@ -15,7 +15,7 @@ const YELLOW = "#f4f07a";
 
 const projects = [
   {
-    date: "JUL 2026",
+    date: "MAR 2026",
     title: "Helicone joins Mintlify",
     href: "https://x.com/justinstorre/status/2028878183949554127",
   },
@@ -296,7 +296,7 @@ export default function Page() {
               Folded it into Mintlify
             </h2>
             <p className="mt-3 leading-relaxed">
-              Helicone joined Mintlify in July 2026. Same bet from a bigger
+              Helicone joined Mintlify in March 2026. Same bet from a bigger
               surface: agents are only as good as the context you hand them.
             </p>
           </div>

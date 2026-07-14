@@ -188,7 +188,7 @@ export default function JustinOS() {
             <p className="mb-3 text-zinc-400">San Francisco. Builds things, flies drones.</p>
             <p className="mb-3">
               <span className="text-emerald-400">now:</span> building the context layer for AI agents at{" "}
-              <span className="text-white">Mintlify</span>. Helicone joined Mintlify in July 2026.
+              <span className="text-white">Mintlify</span>. Helicone joined Mintlify in March 2026.
             </p>
             <p>
               <span className="text-sky-400">prev:</span> co-founder and CEO of{" "}

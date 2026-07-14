@@ -4,8 +4,9 @@ import { videoData } from "./VideoData";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Videos | Justin Torre - Drone Projects & Tech Content",
-  description: "Watch Justin Torre's collection of drone videos, tech projects, and innovative engineering demonstrations. Featuring autonomous drones, computer vision, and creative builds.",
+  title: "Videos: Drone Projects & Engineering Builds",
+  description:
+    "Watch Justin Torre's collection of drone videos, tech projects, and engineering demonstrations. Featuring autonomous drones, computer vision, and creative builds.",
   keywords: [
     "drone videos",
     "autonomous drones",
@@ -14,24 +15,16 @@ export const metadata: Metadata = {
     "Justin Torre videos",
     "drone technology",
     "computer vision",
-    "robotics"
+    "robotics",
   ],
   openGraph: {
     title: "Videos | Justin Torre",
     description: "Watch Justin Torre's collection of drone videos and tech projects",
     type: "website",
     url: "https://justintorre.com/videos",
-    images: [
-      {
-        url: "https://www.helicone.ai/_next/image?url=%2Fassets%2Flanding%2Fhelicone-mobile.webp&w=384&q=75",
-        width: 1200,
-        height: 630,
-        alt: "Justin Torre Videos",
-      },
-    ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "Videos | Justin Torre",
     description: "Watch Justin Torre's collection of drone videos and tech projects",
     creator: "@justintorre",
@@ -51,80 +44,81 @@ type VideoProps = {
   read_more_link?: string;
 };
 
-const YoutubeIFrame: React.FC<{ video: VideoProps }> = ({ video }) => (
-  <iframe
-    className="w-full h-64"
-    src={video.youtube_src}
-    frameBorder="0"
-    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-    allowFullScreen
-  />
-);
-
-const LocalVideoFrame: React.FC<{ video: VideoProps }> = ({ video }) => (
-  <video className="w-full h-64" controls autoPlay>
-    <source src={video.local_src} type={video.video_type} />
-    Your browser does not support HTML video.
-  </video>
-);
-
-const VideoObject: React.FC<{ video: VideoProps }> = ({ video }) => {
-  const DescriptionComponent = video.description_component || null;
-  const descriptionList = video.description_list || [];
-  const ReadMoreComponent = video.read_more_link ? (
-    <a href={video.read_more_link} className="text-blue-500 hover:underline">
-      Click here to read more
-    </a>
-  ) : null;
-
-  let VideoFrame: React.FC<{ video: VideoProps }>;
+function VideoFrame({ video }: { video: VideoProps }) {
   if (video.youtube_src) {
-    VideoFrame = YoutubeIFrame;
-  } else if (video.local_src) {
-    VideoFrame = LocalVideoFrame;
-  } else {
-    console.error("video doesn't have valid src property!");
-    return null;
+    return (
+      <iframe
+        className="aspect-video w-full border border-black"
+        src={video.youtube_src}
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
+    );
   }
+  if (video.local_src) {
+    return (
+      <video className="aspect-video w-full border border-black" controls>
+        <source src={video.local_src} type={video.video_type} />
+        Your browser does not support HTML video.
+      </video>
+    );
+  }
+  return null;
+}
 
+export default function VideosPage() {
   return (
-    <div className="p-4 border rounded shadow-md">
-      <h1 className="text-xl font-bold">{video.name}</h1>
-      <VideoFrame video={video} />
-      <ul className="p-2">
-        {descriptionList.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
-      <div className="max-w-5xl">
-        {DescriptionComponent}
-        {ReadMoreComponent}
-      </div>
-    </div>
-  );
-};
-
-const VideoHighlight: React.FC = () => (
-  <div>
-    <div className="p-4 border rounded shadow-md">
-      <h3 className="text-lg font-semibold">
-        This is a highlight reel of all my favorite videos
-      </h3>
-      <div className="flex items-center">
-        <span>For more videos please checkout</span>
+    <main className="mx-auto max-w-[680px] px-6 py-20 text-black sm:py-28">
+      <header className="mb-14">
         <Link
-          href="https://www.youtube.com/channel/UCvyR2nnfjFFIaUcicUT-qJg/videos"
-          className="text-blue-500 hover:underline flex items-center ml-2"
+          href="/"
+          className="font-mono text-sm text-neutral-500 transition-colors hover:text-black"
         >
-          <span>my YouTube channel</span>
-          <i className="fab fa-youtube ml-2 text-xl"></i>
+          ~/justin-torre
         </Link>
-      </div>
-    </div>
-    {videoData.map((video, index) => (
-      <VideoObject key={index} video={video} />
-    ))}
-  </div>
-);
+        <h1 className="mt-4 text-[22px] font-bold tracking-tight">Videos</h1>
+        <p className="mt-3 text-[15px] text-neutral-600">
+          Drone builds and other projects. More on{" "}
+          <a
+            href="https://www.youtube.com/channel/UCvyR2nnfjFFIaUcicUT-qJg/videos"
+            className="underline decoration-1 underline-offset-4 hover:no-underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            YouTube
+          </a>
+          .
+        </p>
+      </header>
 
-export default VideoHighlight;
+      <div className="flex flex-col gap-14">
+        {(videoData as VideoProps[]).map((video) => (
+          <section key={video.name} className="border-t border-black pt-4">
+            <h2 className="mb-4 text-lg font-semibold">{video.name}</h2>
+            <VideoFrame video={video} />
+            {video.description_list && video.description_list.length > 0 ? (
+              <ul className="mt-4 list-disc pl-5 text-sm leading-relaxed text-neutral-600">
+                {video.description_list.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+            ) : null}
+            {video.description_component ? (
+              <div className="mt-4 text-sm leading-relaxed text-neutral-600">
+                {video.description_component}
+              </div>
+            ) : null}
+            {video.read_more_link ? (
+              <a
+                href={video.read_more_link}
+                className="mt-3 inline-block text-sm underline decoration-1 underline-offset-4 hover:no-underline"
+              >
+                Read more &rarr;
+              </a>
+            ) : null}
+          </section>
+        ))}
+      </div>
+    </main>
+  );
+}

@@ -3,10 +3,12 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Justin Torre",
-    jobTitle: "CEO & Founder",
+    jobTitle: "Head of Enterprise Solutions",
     url: "https://justintorre.com",
+    image: "https://justintorre.com/justin.png",
     sameAs: [
       "https://twitter.com/justintorre",
+      "https://x.com/justinstorre",
       "https://github.com/chitalian",
       "https://gitlab.com/justintorre75",
       "https://www.linkedin.com/in/justintorre/",
@@ -14,33 +16,34 @@ export default function StructuredData() {
     ],
     worksFor: {
       "@type": "Organization",
-      name: "Helicone",
-      url: "https://www.helicone.ai",
-      description: "Open-source observability platform for generative AI",
-      foundingDate: "2023",
-      founder: {
-        "@type": "Person",
-        name: "Justin Torre",
+      name: "Mintlify",
+      url: "https://mintlify.com",
+      description: "The context layer for AI agents",
+    },
+    alumniOf: [
+      {
+        "@type": "CollegeOrUniversity",
+        name: "Northeastern University",
       },
-    },
-    alumniOf: {
-      "@type": "Organization",
-      name: "Y Combinator",
-      description: "W23 Batch",
-    },
-    knowsAbout: [
-      "Software Engineering",
-      "Full Stack Development",
-      "AI/ML",
-      "Observability",
-      "Drone Technology",
-      "Entrepreneurship",
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Python",
+      {
+        "@type": "Organization",
+        name: "Y Combinator",
+        description: "W23 Batch",
+      },
     ],
-    description: "Builder, CEO of Helicone, and full stack developer specializing in AI observability and innovative software solutions.",
+    knowsAbout: [
+      "LLM Observability",
+      "AI Infrastructure",
+      "ClickHouse",
+      "Software Engineering",
+      "Startups",
+      "TypeScript",
+      "Rust",
+      "iOS Development",
+      "Drone Technology",
+    ],
+    description:
+      "Justin Torre is Head of Enterprise Solutions at Mintlify, building the context layer for AI agents. Previously co-founder and CEO of Helicone (YC W23), open-source LLM observability, acquired by Mintlify in 2026.",
   };
 
   const websiteSchema = {
@@ -52,12 +55,8 @@ export default function StructuredData() {
       "@type": "Person",
       name: "Justin Torre",
     },
-    description: "Personal website of Justin Torre, CEO of Helicone and full stack developer.",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: "https://justintorre.com/?q={search_term_string}",
-      "query-input": "required name=search_term_string",
-    },
+    description:
+      "Personal website of Justin Torre: projects, writing, and videos.",
   };
 
   const organizationSchema = {
@@ -65,13 +64,14 @@ export default function StructuredData() {
     "@type": "Organization",
     name: "Helicone",
     url: "https://www.helicone.ai",
-    logo: "https://www.helicone.ai/assets/landing/helicone-logo.png",
     founder: {
       "@type": "Person",
       name: "Justin Torre",
     },
     foundingDate: "2023",
-    description: "Open-source observability platform for generative AI",
+    dissolutionDate: "2026",
+    description:
+      "Open-source observability platform for generative AI, acquired by Mintlify in March 2026",
     sameAs: [
       "https://twitter.com/helicone_ai",
       "https://github.com/Helicone",

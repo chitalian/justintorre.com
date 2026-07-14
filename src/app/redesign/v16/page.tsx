@@ -17,7 +17,7 @@ type LogItem = {
 const work: LogItem[] = [
   {
     no: "JT-061",
-    date: "JUL 2026",
+    date: "MAR 2026",
     title: "Helicone joins Mintlify",
     href: "https://x.com/justinstorre/status/2028878183949554127",
     external: true,
@@ -219,7 +219,7 @@ export default function Page() {
               className="ml-1 inline-block -rotate-2 border px-1.5 py-0.5 align-middle font-mono text-[10px] uppercase tracking-[0.12em]"
               style={{ borderColor: ORANGE, color: ORANGE }}
             >
-              Acquired Jul 2026
+              Acquired Mar 2026
             </span>
           </p>
         </header>
@@ -239,7 +239,7 @@ export default function Page() {
           <Section label="Current assignment">
             <p className="text-[15px] leading-relaxed">
               Building the context layer for AI agents at Mintlify. Helicone
-              joined Mintlify in July 2026.
+              joined Mintlify in March 2026.
             </p>
           </Section>
 

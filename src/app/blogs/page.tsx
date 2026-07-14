@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { posts } from "./posts";
 
 export const metadata: Metadata = {
-  title: "Blog | Justin Torre",
+  title: "Blog",
   description:
     "Engineering notes from building Helicone: ClickHouse, LLM observability, and whatever else I'm working on.",
   alternates: {
@@ -34,20 +34,20 @@ function formatDate(iso: string): string {
 
 export default function BlogsPage() {
   return (
-    <main className="mx-auto max-w-2xl px-6 py-16">
+    <main className="mx-auto max-w-[680px] px-6 py-20 text-black sm:py-28">
       <header className="mb-14">
         <Link
           href="/"
-          className="font-mono text-sm text-neutral-500 hover:text-cyan-400 transition-colors"
+          className="font-mono text-sm text-neutral-500 transition-colors hover:text-black"
         >
           ~/justin-torre
         </Link>
-        <h1 className="mt-4 font-mono text-3xl font-bold text-white">Blog</h1>
-        <p className="mt-3 text-neutral-400">
+        <h1 className="mt-4 text-[22px] font-bold tracking-tight">Blog</h1>
+        <p className="mt-3 text-[15px] text-neutral-600">
           Engineering notes from building{" "}
           <a
             href="https://helicone.ai"
-            className="text-cyan-400 hover:underline"
+            className="underline decoration-1 underline-offset-4 hover:no-underline"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -57,20 +57,23 @@ export default function BlogsPage() {
         </p>
       </header>
 
-      <ul className="flex flex-col gap-10">
+      <ul className="flex flex-col border-t border-black">
         {posts.map((post) => (
-          <li key={post.slug}>
-            <Link href={`/blogs/${post.slug}`} className="group block">
+          <li key={post.slug} className="border-b border-black">
+            <Link
+              href={`/blogs/${post.slug}`}
+              className="group block py-5 transition-colors duration-150 hover:bg-neutral-100"
+            >
               <time
                 dateTime={post.date}
                 className="font-mono text-xs text-neutral-500"
               >
                 {formatDate(post.date)} · {post.readTime} read
               </time>
-              <h2 className="mt-1 text-xl font-semibold text-white group-hover:text-cyan-400 transition-colors">
+              <h2 className="mt-1 text-xl font-semibold text-black">
                 {post.title}
               </h2>
-              <p className="mt-2 text-sm leading-relaxed text-neutral-400">
+              <p className="mt-2 text-sm leading-relaxed text-neutral-600">
                 {post.description}
               </p>
             </Link>

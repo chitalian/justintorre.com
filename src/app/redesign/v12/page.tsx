@@ -9,7 +9,7 @@ type Item = {
 
 const work: Item[] = [
   {
-    date: "Jul 2026",
+    date: "Mar 2026",
     title: "Helicone joins Mintlify",
     href: "https://x.com/justinstorre/status/2028878183949554127",
     external: true,
@@ -117,7 +117,7 @@ export default function Page() {
           <Section label="Now">
             <p className="text-[15px] leading-relaxed">
               Building the context layer for AI agents at Mintlify. Helicone
-              joined Mintlify in July 2026.
+              joined Mintlify in March 2026.
             </p>
           </Section>
 

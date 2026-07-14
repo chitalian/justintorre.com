@@ -12,22 +12,25 @@ export const viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Justin Torre | Builder | CEO Helicone",
+  title: {
+    default: "Justin Torre | Mintlify, prev. CEO of Helicone (YC W23)",
+    template: "%s | Justin Torre",
+  },
   description:
-    "Justin Torre is a builder, CEO of Helicone, and a full stack developer specializing in AI observability, drone technology, and innovative software solutions.",
+    "Justin Torre is Head of Enterprise Solutions at Mintlify, building the context layer for AI agents. Previously co-founder and CEO of Helicone (YC W23), open-source LLM observability, acquired by Mintlify in 2026.",
   keywords: [
     "Justin Torre",
+    "Mintlify",
     "Helicone",
-    "CEO",
-    "software engineer",
-    "full stack developer",
-    "AI observability",
-    "YCombinator",
-    "W23",
-    "drone technology",
-    "machine learning",
+    "context layer for AI agents",
+    "LLM observability",
+    "AI infrastructure",
+    "ClickHouse",
+    "YC W23",
     "startup founder",
-    "tech entrepreneur"
+    "software engineer",
+    "Tracer One Line Puzzle",
+    "drone technology",
   ],
   authors: [{ name: "Justin Torre" }],
   creator: "Justin Torre",
@@ -86,7 +89,7 @@ export default function RootLayout({
       <head>
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/logo/apple-touch-icon.png" />
-        <meta name="theme-color" content="#06b6d4" />
+        <meta name="theme-color" content="#ffffff" />
         <StructuredData />
       </head>
       <body className={inter.className}>{children}</body>

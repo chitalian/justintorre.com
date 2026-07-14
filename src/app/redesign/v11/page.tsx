@@ -215,7 +215,7 @@ export default function V11Page() {
           </p>
           <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-300/90 sm:text-base">
             Previously co-founder &amp; CEO of Helicone (YC W23), open-source LLM
-            observability. Helicone joined Mintlify in July 2026.
+            observability. Helicone joined Mintlify in March 2026.
           </p>
         </div>
       </section>

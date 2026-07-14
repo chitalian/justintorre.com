@@ -288,7 +288,7 @@ export default function ChangelogHome() {
               Building the context layer for AI agents at Mintlify
             </h2>
             <p className="mt-1.5 max-w-lg text-sm leading-relaxed text-stone-400">
-              Helicone joined Mintlify in July 2026. Same problem, bigger
+              Helicone joined Mintlify in March 2026. Same problem, bigger
               surface: giving agents the context they need to actually work.
             </p>
           </div>

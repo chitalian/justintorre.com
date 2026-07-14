@@ -38,7 +38,7 @@ const updates: {
   external: boolean;
 }[] = [
   {
-    date: "Jul 2026",
+    date: "Mar 2026",
     title: "Helicone joins Mintlify",
     note: "The observability layer meets the docs platform. New chapter starts here.",
     href: "https://x.com/justinstorre/status/2028878183949554127",
@@ -256,7 +256,7 @@ export default function RedesignV5() {
             <a href="https://mintlify.com" target="_blank" rel="noopener noreferrer" className="ink-link font-semibold underline">
               Mintlify
             </a>
-            . Helicone joined Mintlify in July 2026.
+            . Helicone joined Mintlify in March 2026.
           </p>
           <p className="mt-4 max-w-xl text-base leading-relaxed" style={{ color: MUTED }}>
             Before that I was co-founder and CEO of Helicone (YC W23),

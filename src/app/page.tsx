@@ -1,165 +1,205 @@
-"use client";
-
-import StarBackground from "../components/starField/star";
-import Image from "next/image";
-import {
-  AiOutlineGithub,
-  AiOutlineLinkedin,
-  AiOutlineYoutube,
-} from "react-icons/ai";
-import { FaGitlab } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-import { LiaYCombinator } from "react-icons/lia";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
-import TerminalInput from "@/components/terminalCursor";
-import { Terminal } from "@/components/terminal";
 
-const contacts: {
-  url: string;
-  name: string;
-  icon: React.FC<{
-    className: string;
-  }>;
-}[] = [
-  {
-    url: "https://twitter.com/justintorre",
-    name: "Twitter",
-    icon: FaXTwitter,
-  },
-  {
-    url: "https://github.com/chitalian",
-    name: "Github",
-    icon: AiOutlineGithub,
-  },
-  {
-    url: "https://gitlab.com/justintorre75",
-    name: "Gitlab",
-    icon: FaGitlab,
-  },
-  {
-    url: "https://www.linkedin.com/in/justintorre/",
-    name: "Linkedin",
-    icon: AiOutlineLinkedin,
-  },
-  {
-    url: "https://www.youtube.com/@justintorre694/featured",
-    name: "Youtube",
-    icon: AiOutlineYoutube,
-  },
-  {
-    url: "https://www.ycombinator.com/companies/helicone",
-    name: "YCombinator",
-    icon: LiaYCombinator,
-  },
-];
-
-const recentProjects: {
+type Item = {
+  date: string;
   title: string;
-  description: string;
-  url: string;
-  date: Date;
-}[] = [
+  href: string;
+  external: boolean;
+};
+
+const work: Item[] = [
   {
-    title: "17 versions of this website",
-    description:
-      "I couldn't pick a new homepage design, so I built 17 of them. Scroll through every one.",
-    url: "/overview",
-    date: new Date("2026-07-14T00:00:00"),
+    date: "Jul 2026",
+    title: "17 versions of this website. I couldn't pick, so scroll through every one",
+    href: "/projects/website-redesigns",
+    external: false,
   },
   {
+    date: "Jul 2026",
+    title: "Tracer: One Line Puzzle, an iOS game. 60+ levels, no ads, no tracking",
+    href: "/projects/tracer",
+    external: false,
+  },
+  {
+    date: "Jul 2026",
+    title: "offensive-ai-speak, a Claude skill that stops AI from writing slop",
+    href: "https://github.com/chitalian/offensive-ai-speak",
+    external: true,
+  },
+  {
+    date: "Mar 2026",
     title: "Helicone joins Mintlify",
-    description:
-      "After 3 years, 14T+ tokens processed, and $1M+ ARR, Helicone is joining Mintlify to build the context layer for AI agents.",
-    url: "https://x.com/justinstorre/status/2028878183949554127",
-    date: new Date("2026-07-14T00:00:00"),
+    href: "/projects/mintlify",
+    external: false,
   },
   {
-    title: "Tracer: One Line Puzzle",
-    description:
-      "An iOS puzzle game. Trace every line in one continuous stroke without lifting your finger. 60+ levels, no ads, no tracking.",
-    url: "https://apps.apple.com/us/app/tracer-one-line-puzzle/id6785311996",
-    date: new Date("2026-07-01T00:00:00"),
+    date: "Jan 2026",
+    title: "aitrolleyproblem.com: which model provider would you trust to govern humanity?",
+    href: "https://www.aitrolleyproblem.com",
+    external: true,
   },
   {
-    title: "Helicone Re-launch",
-    description: "A platform for monitoring AI models.",
-    url: "https://x.com/helicone_ai/status/1686840508658876419?s=20",
-    date: new Date("2023-07-01T00:00:00"),
+    date: "Aug 2024",
+    title: "Helicone hits #1 Product of the Day on Product Hunt",
+    href: "https://www.helicone.ai/blog/product-hunt-automate",
+    external: true,
   },
   {
-    title: "YC W23 Batch",
-    description: "I recently finished YCombinator's W23 batch.",
-    url: "https://www.ycombinator.com/launches/I73-helicone-open-source-observability-platform-for-generative-ai",
-    date: new Date("2023-04-01T00:00:00"),
+    date: "Jul 2023",
+    title: "Helicone re-launch",
+    href: "/projects/helicone",
+    external: false,
   },
   {
-    title: "Scale AI Hackathon",
-    description: "Won 3rd place in Scale AI's Hackathon.",
-    url: "https://sfstandard.com/2023/02/02/tom-brady-and-gisele-bundchen-face-off-in-ai-rap-battle/",
-    date: new Date("2023-02-02T00:00:00"),
+    date: "Apr 2023",
+    title: "YC W23 launch: open-source observability for generative AI",
+    href: "https://www.ycombinator.com/launches/I73-helicone-open-source-observability-platform-for-generative-ai",
+    external: true,
+  },
+  {
+    date: "Feb 2023",
+    title: "Scale AI Hackathon, 3rd place",
+    href: "/projects/scale-ai-hackathon",
+    external: false,
   },
 ];
+
+const writing: Item[] = [
+  {
+    date: "Jul 2026",
+    title: "Allowing your users to query ClickHouse directly using raw SQL",
+    href: "/blogs/clickhouse-rls-query-parameters",
+    external: false,
+  },
+  {
+    date: "Mar 2026",
+    title: "What three years of watching AI in production taught us",
+    href: "https://www.mintlify.com/blog/why-we-joined-mintlify",
+    external: true,
+  },
+];
+
+const links = [
+  { label: "About", href: "/about", external: false },
+  { label: "Projects", href: "/projects", external: false },
+  { label: "Blog", href: "/blogs", external: false },
+  { label: "Videos", href: "/videos", external: false },
+  { label: "X", href: "https://twitter.com/justintorre", external: true },
+  { label: "GitHub", href: "https://github.com/chitalian", external: true },
+  { label: "GitLab", href: "https://gitlab.com/justintorre75", external: true },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/justintorre/", external: true },
+  { label: "YouTube", href: "https://www.youtube.com/@justintorre694/featured", external: true },
+  { label: "YC", href: "https://www.ycombinator.com/companies/helicone", external: true },
+];
+
+function Row({ item }: { item: Item }) {
+  const className =
+    "grid grid-cols-[8ch_1fr_auto] items-baseline gap-x-4 border-b border-black py-3 rounded-none transition-colors duration-150 hover:bg-neutral-100";
+  const inner = (
+    <>
+      <span className="font-mono text-[13px] tabular-nums text-neutral-500">
+        {item.date}
+      </span>
+      <span className="text-[15px] leading-snug">{item.title}</span>
+      <span aria-hidden="true" className="font-mono text-[13px]">
+        &rarr;
+      </span>
+    </>
+  );
+  if (item.external) {
+    return (
+      <a href={item.href} target="_blank" rel="noopener noreferrer" className={className}>
+        {inner}
+      </a>
+    );
+  }
+  return (
+    <Link href={item.href} className={className}>
+      {inner}
+    </Link>
+  );
+}
+
+function Section({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <section className="border-t border-black pt-4">
+      <h2 className="font-mono text-[11px] uppercase tracking-[0.25em]">{label}</h2>
+      <div className="mt-4">{children}</div>
+    </section>
+  );
+}
 
 export default function Home() {
-  const image =
-    "https://www.helicone.ai/_next/image?url=%2Fassets%2Flanding%2Fhelicone-mobile.webp&w=384&q=75";
-
   return (
-    <>
-      <StarBackground />
+    <main className="min-h-screen bg-white text-black antialiased">
+      <div className="mx-auto max-w-[680px] px-6 py-20 sm:py-28">
+        <header className="pb-14">
+          <h1 className="text-[22px] font-bold leading-none tracking-tight">
+            Justin Torre
+          </h1>
+          <p className="mt-5 max-w-[52ch] text-[15px] leading-relaxed">
+            Founder and engineer. I ran Helicone (YC W23), open-source LLM
+            observability, from first commit to $1M+ ARR.
+          </p>
+          <p className="mt-4 font-mono text-[12px] leading-relaxed tabular-nums">
+            14T+ tokens processed &middot; 36M+ end users tracked &middot; 30k+
+            signups &middot; 5.2k GitHub stars
+          </p>
+        </header>
 
-      <main className="z-30 flex min-h-screen flex-col items-center justify-between py-28 lg:p-28 w-full gap-8" role="main">
-        <h1 className="z-50 font-mono text-lg fixed left-0 top-0 flex w-full justify-center bg-gradient-to-b backdrop-blur-2xl p-8">
-          Justin Torre
-        </h1>
-        <nav className="z-50 font-mono text-lg fixed left-0 bottom-0 w-full  p-5 flex justify-center gap-1 lg:gap-5 backdrop-blur-2xl" role="navigation" aria-label="Social media links">
-          {contacts.map((contact) => (
-            <Link
-              href={contact.url}
-              key={contact.name}
-              className="flex items-center hover:border-neutral-700 hover:bg-neutral-800/30 p-2 lg:p-5 rounded-lg border border-transparent  transition-transform hover:scale-105 motion-reduce:transform-none"
-              aria-label={`Visit Justin Torre's ${contact.name} profile`}
-              title={`${contact.name} Profile`}
-            >
-              <contact.icon className="mr-2 h-6 w-6" aria-hidden="true" />
-              <span className="hidden lg:block">{contact.name}</span>
-            </Link>
-          ))}
-        </nav>
-        <div className="h-[500px] w-full max-w-4xl">
-          <Terminal />
+        <div className="space-y-14">
+          <Section label="Now">
+            <p className="text-[15px] leading-relaxed">
+              Building the context layer for AI agents at Mintlify. Helicone
+              joined Mintlify in March 2026.
+            </p>
+          </Section>
+
+          <Section label="Work">
+            <div>
+              {work.map((item) => (
+                <Row key={item.href} item={item} />
+              ))}
+            </div>
+          </Section>
+
+          <Section label="Writing">
+            <div>
+              {writing.map((item) => (
+                <Row key={item.href} item={item} />
+              ))}
+            </div>
+          </Section>
+
+          <Section label="Links">
+            <ul className="flex flex-wrap gap-x-6 gap-y-3 text-[15px]">
+              {links.map((link) => (
+                <li key={link.href}>
+                  {link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-none underline decoration-1 underline-offset-4 transition-colors duration-150 hover:bg-neutral-100"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="rounded-none underline decoration-1 underline-offset-4 transition-colors duration-150 hover:bg-neutral-100"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </Section>
         </div>
 
-        <section className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-2 lg:text-left" aria-label="Recent Projects">
-          {recentProjects.map((project) => (
-            <Link
-              href={project.url}
-              className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-              target="_blank"
-              rel="noopener noreferrer"
-              key={project.title}
-              aria-label={`Learn more about ${project.title}`}
-            >
-              <h2 className={`mb-3 text-2xl font-semibold`}>
-                {project.title}{" "}
-              </h2>
-              <time
-                className={`m-0 max-w-[30ch] text-sm opacity-50 mb-2 text-gray-500 block`}
-                dateTime={project.date.toISOString()}
-              >
-                {project.date.toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                })}
-              </time>
-              <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-                {project.description}
-              </p>
-            </Link>
-          ))}
-        </section>
-      </main>
-    </>
+        <div className="mt-14 border-t border-black" aria-hidden="true" />
+      </div>
+    </main>
   );
 }

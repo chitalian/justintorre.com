@@ -626,7 +626,7 @@ export default function RedesignV13() {
           <p className="s7-bio">
             Building the context layer for AI agents at Mintlify. Before that,
             co-founder and CEO of Helicone (YC W23), open source LLM
-            observability, until Helicone joined Mintlify in July 2026.
+            observability, until Helicone joined Mintlify in March 2026.
           </p>
           <div className="s7-memtable">
             <MemoryRow name="Helicone" value="14T+ tokens" pct={94} />
@@ -642,7 +642,7 @@ export default function RedesignV13() {
           <div className="s7-note">
             <p>
               <b>Now.</b> At Mintlify, building the context layer for AI
-              agents. Helicone joined Mintlify in July 2026.
+              agents. Helicone joined Mintlify in March 2026.
             </p>
             <p>
               <b>Before.</b> Co-founder and CEO of Helicone. Open source LLM

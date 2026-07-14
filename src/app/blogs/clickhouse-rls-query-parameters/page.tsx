@@ -7,7 +7,7 @@ import { posts } from "../posts";
 const post = posts.find((p) => p.slug === "clickhouse-rls-query-parameters")!;
 
 export const metadata: Metadata = {
-  title: `${post.title} | Justin Torre`,
+  title: post.title,
   description: post.description,
   keywords: [
     "ClickHouse row-level security",
@@ -71,12 +71,12 @@ const jsonLd = {
 };
 
 function P({ children }: { children: React.ReactNode }) {
-  return <p className="my-5 leading-relaxed text-neutral-300">{children}</p>;
+  return <p className="my-5 leading-relaxed text-neutral-800">{children}</p>;
 }
 
 function H2({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="mt-12 mb-4 font-mono text-xl font-semibold text-white">
+    <h2 className="mt-12 mb-4 font-mono text-xl font-semibold text-black">
       {children}
     </h2>
   );
@@ -85,11 +85,11 @@ function H2({ children }: { children: React.ReactNode }) {
 async function Code({ children, lang }: { children: string; lang: string }) {
   const html = await codeToHtml(children, {
     lang,
-    theme: "vesper",
+    theme: "github-light",
   });
   return (
     <div
-      className="my-6 overflow-hidden rounded-lg border border-neutral-800 text-sm leading-relaxed [&_pre]:m-0 [&_pre]:overflow-x-auto [&_pre]:p-4"
+      className="my-6 overflow-hidden rounded-none border border-black text-sm leading-relaxed [&_pre]:m-0 [&_pre]:overflow-x-auto [&_pre]:p-4"
       dangerouslySetInnerHTML={{ __html: html }}
     />
   );
@@ -97,7 +97,7 @@ async function Code({ children, lang }: { children: string; lang: string }) {
 
 function IC({ children }: { children: React.ReactNode }) {
   return (
-    <code className="rounded bg-neutral-800 px-1.5 py-0.5 font-mono text-[0.85em] text-cyan-300">
+    <code className="rounded-none bg-neutral-100 px-1.5 py-0.5 font-mono text-[0.85em] text-black">
       {children}
     </code>
   );
@@ -113,11 +113,11 @@ export default function ClickhouseRlsPost() {
       <header className="mb-10">
         <Link
           href="/blogs"
-          className="font-mono text-sm text-neutral-500 hover:text-cyan-400 transition-colors"
+          className="font-mono text-sm text-neutral-500 transition-colors hover:text-black"
         >
           ← blog
         </Link>
-        <h1 className="mt-4 text-3xl font-bold leading-tight text-white">
+        <h1 className="mt-4 text-3xl font-bold leading-tight text-black">
           {post.title}
         </h1>
         <time
@@ -157,7 +157,7 @@ export default function ClickhouseRlsPost() {
             alt="The HQL editor in Helicone showing a SQL query that aggregates token usage per day from request_response_rmt, with saved queries in a sidebar and the Helix assistant panel on the right"
             width={2000}
             height={1314}
-            className="rounded-lg border border-neutral-800"
+            className="rounded-none border border-black"
           />
           <figcaption className="mt-3 text-center font-mono text-xs text-neutral-500">
             HQL in production. Every query on this screen runs against the
@@ -172,7 +172,7 @@ export default function ClickhouseRlsPost() {
           from{" "}
           <a
             href="https://github.com/Helicone/helicone/blob/main/clickhouse/migrations/schema_62_hql_row_policies.sql"
-            className="text-cyan-400 hover:underline"
+            className="underline decoration-1 underline-offset-4 hover:no-underline"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -216,7 +216,7 @@ CREATE ROW POLICY hql_organization_filter ON request_response_rmt
           You can&apos;t touch server config, and the{" "}
           <a
             href="https://clickhouse.com/docs/operations/settings/query-level"
-            className="text-cyan-400 hover:underline"
+            className="underline decoration-1 underline-offset-4 hover:no-underline"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -237,7 +237,7 @@ CREATE ROW POLICY hql_organization_filter ON request_response_rmt
           accepts those as no-ops (
           <a
             href="https://github.com/ClickHouse/ClickHouse/pull/50013"
-            className="text-cyan-400 hover:underline"
+            className="underline decoration-1 underline-offset-4 hover:no-underline"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -259,7 +259,7 @@ CREATE ROW POLICY hql_organization_filter ON request_response_rmt
           lives in{" "}
           <a
             href="https://github.com/Helicone/helicone/blob/main/valhalla/jawn/src/lib/db/ClickhouseWrapper.ts"
-            className="text-cyan-400 hover:underline"
+            className="underline decoration-1 underline-offset-4 hover:no-underline"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -316,7 +316,7 @@ if (forbiddenPattern.test(query)) {
           down to{" "}
           <a
             href="https://github.com/Helicone/helicone/blob/main/clickhouse/migrations/schema_64_hql_revoke_all_except_rmt.sql"
-            className="text-cyan-400 hover:underline"
+            className="underline decoration-1 underline-offset-4 hover:no-underline"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -356,7 +356,7 @@ GRANT SELECT ON default.request_response_rmt TO hql_user;`}</Code>
           the query back out (the whole dance is in{" "}
           <a
             href="https://github.com/Helicone/helicone/blob/main/valhalla/jawn/src/managers/HeliconeSqlManager.ts"
-            className="text-cyan-400 hover:underline"
+            className="underline decoration-1 underline-offset-4 hover:no-underline"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -492,12 +492,12 @@ WHERE organization_id != '<my own org id>'
         </P>
       </article>
 
-      <footer className="mt-16 border-t border-neutral-800 pt-8">
-        <p className="text-sm text-neutral-400">
+      <footer className="mt-16 border-t border-black pt-8">
+        <p className="text-sm text-neutral-600">
           HQL is live in{" "}
           <a
             href="https://helicone.ai"
-            className="text-cyan-400 hover:underline"
+            className="underline decoration-1 underline-offset-4 hover:no-underline"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -506,7 +506,7 @@ WHERE organization_id != '<my own org id>'
           , and the code in this post is from the open-source repo:{" "}
           <a
             href="https://github.com/Helicone/helicone"
-            className="text-cyan-400 hover:underline"
+            className="underline decoration-1 underline-offset-4 hover:no-underline"
             target="_blank"
             rel="noopener noreferrer"
           >
