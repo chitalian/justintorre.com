@@ -65,25 +65,32 @@ const recentProjects: {
     description:
       "After 3 years, 14T+ tokens processed, and $1M+ ARR, Helicone is joining Mintlify to build the context layer for AI agents.",
     url: "https://x.com/justinstorre/status/2028878183949554127",
-    date: new Date("2026-07-14"),
+    date: new Date("2026-07-14T00:00:00"),
+  },
+  {
+    title: "Tracer: One Line Puzzle",
+    description:
+      "An iOS puzzle game. Trace every line in one continuous stroke without lifting your finger. 60+ levels, no ads, no tracking.",
+    url: "https://apps.apple.com/us/app/tracer-one-line-puzzle/id6785311996",
+    date: new Date("2026-07-01T00:00:00"),
   },
   {
     title: "Helicone Re-launch",
     description: "A platform for monitoring AI models.",
     url: "https://x.com/helicone_ai/status/1686840508658876419?s=20",
-    date: new Date("2023-07-01"),
+    date: new Date("2023-07-01T00:00:00"),
   },
   {
     title: "YC W23 Batch",
     description: "I recently finished YCombinator's W23 batch.",
     url: "https://www.ycombinator.com/launches/I73-helicone-open-source-observability-platform-for-generative-ai",
-    date: new Date("2023-04-01"),
+    date: new Date("2023-04-01T00:00:00"),
   },
   {
     title: "Scale AI Hackathon",
     description: "Won 3rd place in Scale AI's Hackathon.",
     url: "https://sfstandard.com/2023/02/02/tom-brady-and-gisele-bundchen-face-off-in-ai-rap-battle/",
-    date: new Date("2023-02-02"),
+    date: new Date("2023-02-02T00:00:00"),
   },
 ];
 
