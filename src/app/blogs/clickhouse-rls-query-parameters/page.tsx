@@ -169,8 +169,17 @@ export default function ClickhouseRlsPost() {
         <P>
           A row policy in ClickHouse is a filter the server appends to every
           read, per table, per user. The setup is two statements, straight
-          from our migrations: create a unique user that will have the row
-          policy, then attach the policy to that user.
+          from{" "}
+          <a
+            href="https://github.com/Helicone/helicone/blob/main/clickhouse/migrations/schema_62_hql_row_policies.sql"
+            className="text-cyan-400 hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            our migrations
+          </a>
+          : create a unique user that will have the row policy, then attach
+          the policy to that user.
         </P>
         <Code lang="sql">{`CREATE USER IF NOT EXISTS hql_user;
 
@@ -246,7 +255,17 @@ CREATE ROW POLICY hql_organization_filter ON request_response_rmt
           they travel as URL query parameters, so every HQL request carries
           the tenant id in the query string:{" "}
           <IC>?SQL_helicone_organization_id=&lt;org&gt;</IC>. The official
-          Node client hides that behind <IC>clickhouse_settings</IC>:
+          Node client hides that behind <IC>clickhouse_settings</IC>; ours
+          lives in{" "}
+          <a
+            href="https://github.com/Helicone/helicone/blob/main/valhalla/jawn/src/lib/db/ClickhouseWrapper.ts"
+            className="text-cyan-400 hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ClickhouseWrapper.ts
+          </a>
+          :
         </P>
         <Code lang="ts">{`const result = await clickHouseHqlClient.query({
   query: userSql,
@@ -294,7 +313,16 @@ if (forbiddenPattern.test(query)) {
           database, and ClickHouse ships with very readable system tables.{" "}
           <IC>system.query_log</IC> alone contains every query every tenant
           has ever run, SQL text included. So <IC>hql_user</IC> gets stripped
-          down to exactly one grant:
+          down to{" "}
+          <a
+            href="https://github.com/Helicone/helicone/blob/main/clickhouse/migrations/schema_64_hql_revoke_all_except_rmt.sql"
+            className="text-cyan-400 hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            exactly one grant
+          </a>
+          :
         </P>
         <Code lang="sql">{`REVOKE ALL ON system.* FROM hql_user;
 REVOKE ALL ON information_schema.* FROM hql_user;
@@ -325,7 +353,16 @@ GRANT SELECT ON default.request_response_rmt TO hql_user;`}</Code>
           We still parse queries, but only for things that are allowed to
           fail. node-sql-parser has no ClickHouse dialect, so we parse with
           its Postgres one, clamp or insert a LIMIT on the AST, and serialize
-          the query back out:
+          the query back out (the whole dance is in{" "}
+          <a
+            href="https://github.com/Helicone/helicone/blob/main/valhalla/jawn/src/managers/HeliconeSqlManager.ts"
+            className="text-cyan-400 hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            HeliconeSqlManager.ts
+          </a>
+          ):
         </P>
         <Code lang="ts">{`const ast = parser.astify(sql, { database: "Postgresql" });
 const limitedAst = addLimit(normalizeAst(ast)[0], limit);
@@ -368,7 +405,16 @@ firstSql = parser.sqlify(limitedAst, { database: "Postgresql" });`}</Code>
         </P>
         <P>
           So the test suite mostly attacks the database instead of the
-          parser. <IC>hqlSecurityTests.test.ts</IC> is 843 lines of
+          parser.{" "}
+          <a
+            href="https://github.com/Helicone/helicone/blob/main/valhalla/jawn/src/lib/db/test/hqlSecurityTests.test.ts"
+            className="hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <IC>hqlSecurityTests.test.ts</IC>
+          </a>{" "}
+          is 843 lines of
           adversarial queries run against a real ClickHouse instance with the
           real row policy attached, because a database-enforced guarantee is
           exactly the thing mocks can&apos;t test. The describe blocks read
