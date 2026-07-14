@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import StructuredData from "@/components/StructuredData";
+import PostHogProvider from "@/components/PostHogProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -81,7 +82,9 @@ export default function RootLayout({
         <meta name="theme-color" content="#ffffff" />
         <StructuredData />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <PostHogProvider>{children}</PostHogProvider>
+      </body>
     </html>
   );
 }
