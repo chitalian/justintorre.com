@@ -60,7 +60,7 @@ const activeSideQuests: Project[] = [
   },
 ];
 
-const completedSideQuests: Project[] = [
+const graveyard: Project[] = [
   {
     href: "/projects/website-redesigns",
     title: "17 versions of this website",
@@ -151,10 +151,10 @@ export default function ProjectsPage() {
 
         <section className="border-t border-black pt-4">
           <h2 className="font-mono text-[11px] uppercase tracking-[0.25em]">
-            Completed side quests
+            Graveyard
           </h2>
           <div className="mt-4">
-            {completedSideQuests.map((p) => (
+            {graveyard.map((p) => (
               <ProjectRow key={p.href} project={p} />
             ))}
           </div>

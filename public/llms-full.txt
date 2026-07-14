@@ -15,7 +15,7 @@ Hiring a team to help us build the context layer for AI agents. More info: https
 - aitrolleyproblem.com — Which model provider would you trust to govern humanity? → https://www.aitrolleyproblem.com
 - offensive-ai-speak — A Claude skill that stops AI from writing slop. → https://github.com/chitalian/offensive-ai-speak
 
-## Completed side quests
+## Graveyard
 
 - 17 versions of this website — One homepage, seventeen designs, one plain winner. → https://justintorre.com/projects/website-redesigns.md
 - Scale AI Hackathon — 3rd place, with an AI rap battle in the demo. → https://justintorre.com/projects/scale-ai-hackathon.md
@@ -110,7 +110,7 @@ Things I've built, shipped, and occasionally handed off.
 - aitrolleyproblem.com — Which model provider would you trust to govern humanity? → https://www.aitrolleyproblem.com
 - offensive-ai-speak — A Claude skill that stops AI from writing slop. → https://github.com/chitalian/offensive-ai-speak
 
-## Completed side quests
+## Graveyard
 
 - 17 versions of this website — One homepage, seventeen designs, one very plain winner. → https://justintorre.com/projects/website-redesigns.md
 - Scale AI Hackathon — 3rd place in February 2023, with an AI rap battle in the demo. → https://justintorre.com/projects/scale-ai-hackathon.md

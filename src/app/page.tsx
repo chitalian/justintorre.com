@@ -61,7 +61,7 @@ const activeSideQuests = [
   },
 ];
 
-const completedSideQuests = [
+const graveyard = [
   {
     name: "17 versions of this website",
     line: "One homepage, seventeen designs, one plain winner.",
@@ -221,9 +221,9 @@ export default function Home() {
             </div>
           </Section>
 
-          <Section label="Completed side quests">
+          <Section label="Graveyard">
             <div>
-              {completedSideQuests.map((p) => (
+              {graveyard.map((p) => (
                 <ProjectRow key={p.href} project={p} />
               ))}
             </div>
