@@ -55,23 +55,16 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://justintorre.com",
     siteName: "Justin Torre",
-    title: "Justin Torre | Builder | CEO Helicone",
-    description: "Justin Torre is a builder, CEO of Helicone, and a full stack developer specializing in AI observability and innovative software solutions.",
-    images: [
-      {
-        url: "https://www.helicone.ai/_next/image?url=%2Fassets%2Flanding%2Fhelicone-mobile.webp&w=384&q=75",
-        width: 1200,
-        height: 630,
-        alt: "Justin Torre - CEO of Helicone",
-      },
-    ],
+    title: "Justin Torre | Mintlify, prev. CEO of Helicone (YC W23)",
+    description:
+      "Justin Torre is Head of Enterprise Solutions at Mintlify, building the context layer for AI agents. Previously co-founder and CEO of Helicone (YC W23).",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Justin Torre | Builder | CEO Helicone",
-    description: "Justin Torre is a builder, CEO of Helicone, and a full stack developer specializing in AI observability and innovative software solutions.",
-    creator: "@justintorre",
-    images: ["https://www.helicone.ai/_next/image?url=%2Fassets%2Flanding%2Fhelicone-mobile.webp&w=384&q=75"],
+    title: "Justin Torre | Mintlify, prev. CEO of Helicone (YC W23)",
+    description:
+      "Justin Torre is Head of Enterprise Solutions at Mintlify, building the context layer for AI agents. Previously co-founder and CEO of Helicone (YC W23).",
+    creator: "@justinstorre",
   },
 };
 
