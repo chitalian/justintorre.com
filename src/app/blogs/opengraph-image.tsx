@@ -79,7 +79,7 @@ export default function OgImage() {
             color: "#a3a3a3",
           }}
         >
-          Engineering notes from building Helicone
+          Writing from Justin Torre
         </div>
         <div
           style={{

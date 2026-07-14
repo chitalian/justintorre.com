@@ -5,21 +5,21 @@ import { posts } from "./posts";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Engineering notes from building Helicone: ClickHouse, LLM observability, and whatever else I'm working on.",
+    "Writing from Justin Torre: ClickHouse, LLM observability, and whatever else I'm working on.",
   alternates: {
     canonical: "/blogs",
   },
   openGraph: {
     title: "Blog | Justin Torre",
     description:
-      "Engineering notes from building Helicone: ClickHouse, LLM observability, and whatever else I'm working on.",
+      "Writing from Justin Torre: ClickHouse, LLM observability, and whatever else I'm working on.",
     type: "website",
     url: "https://justintorre.com/blogs",
   },
   twitter: {
     card: "summary_large_image",
     title: "Blog | Justin Torre",
-    description: "Engineering notes from building Helicone.",
+    description: "Writing from Justin Torre.",
     creator: "@justintorre",
   },
 };
@@ -43,18 +43,6 @@ export default function BlogsPage() {
           ~/justin-torre
         </Link>
         <h1 className="mt-4 text-[22px] font-bold tracking-tight">Blog</h1>
-        <p className="mt-3 text-[15px] text-neutral-600">
-          Engineering notes from building{" "}
-          <a
-            href="https://helicone.ai"
-            className="underline decoration-1 underline-offset-4 hover:no-underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Helicone
-          </a>
-          .
-        </p>
       </header>
 
       <ul className="flex flex-col border-t border-black">
