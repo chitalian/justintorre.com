@@ -17,46 +17,95 @@ export const metadata: Metadata = {
   },
 };
 
-const projects = [
+type Project = {
+  href: string;
+  title: string;
+  line: string;
+  external: boolean;
+};
+
+const mainQuests: Project[] = [
   {
-    slug: "/projects/mintlify",
+    href: "/projects/mintlify",
     title: "Mintlify",
     line: "Building the context layer for AI agents. Helicone joined in March 2026.",
+    external: false,
   },
   {
-    slug: "/projects/helicone",
+    href: "/projects/helicone",
     title: "Helicone",
     line: "Open-source LLM observability, YC W23. 14T+ tokens, $1M+ ARR, acquired.",
-  },
-  {
-    slug: "/projects/tracer",
-    title: "Tracer: One Line Puzzle",
-    line: "An iOS puzzle game. Trace every line in one continuous stroke.",
-  },
-  {
-    slug: "/projects/website-redesigns",
-    title: "17 versions of this website",
-    line: "One homepage, seventeen designs, one very plain winner.",
-  },
-  {
-    slug: "/projects/scale-ai-hackathon",
-    title: "Scale AI Hackathon",
-    line: "3rd place in February 2023, with an AI rap battle in the demo.",
+    external: false,
   },
 ];
 
-const elsewhere = [
+const sideQuests: Project[] = [
+  {
+    href: "/projects/tracer",
+    title: "Tracer: One Line Puzzle",
+    line: "An iOS puzzle game. Trace every line in one continuous stroke.",
+    external: false,
+  },
+  {
+    href: "/projects/website-redesigns",
+    title: "17 versions of this website",
+    line: "One homepage, seventeen designs, one very plain winner.",
+    external: false,
+  },
+  {
+    href: "/projects/scale-ai-hackathon",
+    title: "Scale AI Hackathon",
+    line: "3rd place in February 2023, with an AI rap battle in the demo.",
+    external: false,
+  },
   {
     href: "https://www.aitrolleyproblem.com",
     title: "aitrolleyproblem.com",
     line: "Which model provider would you trust to govern humanity?",
+    external: true,
   },
   {
     href: "https://github.com/chitalian/offensive-ai-speak",
     title: "offensive-ai-speak",
     line: "A Claude skill that stops AI from writing slop.",
+    external: true,
   },
 ];
+
+function ProjectRow({ project }: { project: Project }) {
+  const className =
+    "grid grid-cols-[1fr_auto] items-baseline gap-x-4 border-b border-black last:border-b-0 py-3 transition-colors duration-150 hover:bg-neutral-100";
+  const inner = (
+    <>
+      <span>
+        <span className="text-[15px] font-semibold">{project.title}</span>
+        <span className="ml-3 hidden text-sm text-neutral-600 sm:inline">
+          {project.line}
+        </span>
+      </span>
+      <span aria-hidden="true" className="font-mono text-[13px]">
+        &rarr;
+      </span>
+    </>
+  );
+  if (project.external) {
+    return (
+      <a
+        href={project.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={className}
+      >
+        {inner}
+      </a>
+    );
+  }
+  return (
+    <Link href={project.href} className={className}>
+      {inner}
+    </Link>
+  );
+}
 
 export default function ProjectsPage() {
   return (
@@ -80,22 +129,8 @@ export default function ProjectsPage() {
             Main quests
           </h2>
           <div className="mt-4">
-            {projects.map((p) => (
-              <Link
-                key={p.slug}
-                href={p.slug}
-                className="grid grid-cols-[1fr_auto] items-baseline gap-x-4 border-b border-black py-3 transition-colors duration-150 hover:bg-neutral-100"
-              >
-                <span>
-                  <span className="text-[15px] font-semibold">{p.title}</span>
-                  <span className="ml-3 hidden text-sm text-neutral-600 sm:inline">
-                    {p.line}
-                  </span>
-                </span>
-                <span aria-hidden="true" className="font-mono text-[13px]">
-                  &rarr;
-                </span>
-              </Link>
+            {mainQuests.map((p) => (
+              <ProjectRow key={p.href} project={p} />
             ))}
           </div>
         </section>
@@ -105,24 +140,8 @@ export default function ProjectsPage() {
             Side quests
           </h2>
           <div className="mt-4">
-            {elsewhere.map((p) => (
-              <a
-                key={p.href}
-                href={p.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="grid grid-cols-[1fr_auto] items-baseline gap-x-4 border-b border-black py-3 transition-colors duration-150 hover:bg-neutral-100"
-              >
-                <span>
-                  <span className="text-[15px] font-semibold">{p.title}</span>
-                  <span className="ml-3 hidden text-sm text-neutral-600 sm:inline">
-                    {p.line}
-                  </span>
-                </span>
-                <span aria-hidden="true" className="font-mono text-[13px]">
-                  &rarr;
-                </span>
-              </a>
+            {sideQuests.map((p) => (
+              <ProjectRow key={p.href} project={p} />
             ))}
           </div>
         </section>

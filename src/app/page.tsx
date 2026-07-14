@@ -7,42 +7,12 @@ type Item = {
   external: boolean;
 };
 
-const work: Item[] = [
-  {
-    date: "Jul 2026",
-    title: "17 versions of this website. I couldn't pick, so scroll through every one",
-    href: "/projects/website-redesigns",
-    external: false,
-  },
-  {
-    date: "Jul 2026",
-    title: "Tracer: One Line Puzzle, an iOS game. 60+ levels, no ads, no tracking",
-    href: "/projects/tracer",
-    external: false,
-  },
-  {
-    date: "Jul 2026",
-    title: "offensive-ai-speak, a Claude skill that stops AI from writing slop",
-    href: "https://github.com/chitalian/offensive-ai-speak",
-    external: true,
-  },
+const news: Item[] = [
   {
     date: "Mar 2026",
     title: "Helicone joins Mintlify",
     href: "/projects/mintlify",
     external: false,
-  },
-  {
-    date: "Jan 2026",
-    title: "aitrolleyproblem.com: which model provider would you trust to govern humanity?",
-    href: "https://www.aitrolleyproblem.com",
-    external: true,
-  },
-  {
-    date: "Aug 2024",
-    title: "Helicone hits #1 Product of the Day on Product Hunt",
-    href: "https://www.helicone.ai/blog/product-hunt-automate",
-    external: true,
   },
   {
     date: "Jul 2023",
@@ -56,15 +26,9 @@ const work: Item[] = [
     href: "https://www.ycombinator.com/launches/I73-helicone-open-source-observability-platform-for-generative-ai",
     external: true,
   },
-  {
-    date: "Feb 2023",
-    title: "Scale AI Hackathon, 3rd place",
-    href: "/projects/scale-ai-hackathon",
-    external: false,
-  },
 ];
 
-const projects = [
+const mainQuests = [
   {
     name: "Mintlify",
     line: "Building the context layer for AI agents.",
@@ -75,6 +39,9 @@ const projects = [
     line: "Open-source LLM observability, YC W23. 14T+ tokens, acquired.",
     href: "/projects/helicone",
   },
+];
+
+const sideQuests = [
   {
     name: "Tracer: One Line Puzzle",
     line: "An iOS puzzle game. One stroke, no lifting your finger.",
@@ -89,6 +56,18 @@ const projects = [
     name: "Scale AI Hackathon",
     line: "3rd place, with an AI rap battle in the demo.",
     href: "/projects/scale-ai-hackathon",
+  },
+  {
+    name: "aitrolleyproblem.com",
+    line: "Which model provider would you trust to govern humanity?",
+    href: "https://www.aitrolleyproblem.com",
+    external: true,
+  },
+  {
+    name: "offensive-ai-speak",
+    line: "A Claude skill that stops AI from writing slop.",
+    href: "https://github.com/chitalian/offensive-ai-speak",
+    external: true,
   },
 ];
 
@@ -122,7 +101,7 @@ const links = [
 
 function Row({ item }: { item: Item }) {
   const className =
-    "grid grid-cols-[8ch_1fr_auto] items-baseline gap-x-4 border-b border-black py-3 rounded-none transition-colors duration-150 hover:bg-neutral-100";
+    "grid grid-cols-[8ch_1fr_auto] items-baseline gap-x-4 border-b border-black last:border-b-0 py-3 rounded-none transition-colors duration-150 hover:bg-neutral-100";
   const inner = (
     <>
       <span className="font-mono text-[13px] tabular-nums text-neutral-500">
@@ -148,6 +127,45 @@ function Row({ item }: { item: Item }) {
   );
 }
 
+function ProjectRow({
+  project,
+}: {
+  project: { name: string; line: string; href: string; external?: boolean };
+}) {
+  const className =
+    "grid grid-cols-[1fr_auto] items-baseline gap-x-4 border-b border-black last:border-b-0 py-3 rounded-none transition-colors duration-150 hover:bg-neutral-100";
+  const inner = (
+    <>
+      <span>
+        <span className="text-[15px] font-semibold">{project.name}</span>
+        <span className="ml-3 hidden text-sm text-neutral-600 sm:inline">
+          {project.line}
+        </span>
+      </span>
+      <span aria-hidden="true" className="font-mono text-[13px]">
+        &rarr;
+      </span>
+    </>
+  );
+  if (project.external) {
+    return (
+      <a
+        href={project.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={className}
+      >
+        {inner}
+      </a>
+    );
+  }
+  return (
+    <Link href={project.href} className={className}>
+      {inner}
+    </Link>
+  );
+}
+
 function Section({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <section className="border-t border-black pt-4">
@@ -160,7 +178,7 @@ function Section({ label, children }: { label: string; children: React.ReactNode
 export default function Home() {
   return (
     <main className="min-h-screen bg-white text-black antialiased">
-      <div className="mx-auto max-w-[680px] px-6 py-20 sm:py-28">
+      <div className="mx-auto max-w-[780px] px-6 py-20 sm:py-28">
         <header className="pb-14">
           <h1 className="text-[22px] font-bold leading-none tracking-tight">
             Justin Torre
@@ -170,49 +188,39 @@ export default function Home() {
             observability, from first commit to $1M+ ARR. Now I am building an
             FDE team at Mintlify as their Head of Enterprise Solutions.
           </p>
+          <p className="mt-4 max-w-[52ch] text-[15px] leading-relaxed">
+            Hiring a team to help us build the context layer for AI agents.{" "}
+            <a
+              href="https://x.com/justinstorre/status/2074950678724911474"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="whitespace-nowrap underline decoration-1 underline-offset-4 transition-colors duration-150 hover:bg-neutral-100"
+            >
+              more info &rarr;
+            </a>
+          </p>
         </header>
 
         <div className="space-y-14">
-          <Section label="Now">
-            <p className="text-[15px] leading-relaxed">
-              Building the context layer for AI agents at Mintlify. Helicone
-              joined Mintlify in March 2026.
-            </p>
-          </Section>
-
-          <Section label="Projects">
+          <Section label="Main quests">
             <div>
-              {projects.map((p) => (
-                <Link
-                  key={p.href}
-                  href={p.href}
-                  className="grid grid-cols-[1fr_auto] items-baseline gap-x-4 border-b border-black py-3 rounded-none transition-colors duration-150 hover:bg-neutral-100"
-                >
-                  <span>
-                    <span className="text-[15px] font-semibold">{p.name}</span>
-                    <span className="ml-3 hidden text-sm text-neutral-600 sm:inline">
-                      {p.line}
-                    </span>
-                  </span>
-                  <span aria-hidden="true" className="font-mono text-[13px]">
-                    &rarr;
-                  </span>
-                </Link>
+              {mainQuests.map((p) => (
+                <ProjectRow key={p.href} project={p} />
               ))}
             </div>
-            <p className="mt-3">
-              <Link
-                href="/projects"
-                className="font-mono text-[12px] text-neutral-500 transition-colors hover:text-black"
-              >
-                all projects &rarr;
-              </Link>
-            </p>
           </Section>
 
-          <Section label="Work">
+          <Section label="Side quests">
             <div>
-              {work.map((item) => (
+              {sideQuests.map((p) => (
+                <ProjectRow key={p.href} project={p} />
+              ))}
+            </div>
+          </Section>
+
+          <Section label="News">
+            <div>
+              {news.map((item) => (
                 <Row key={item.href} item={item} />
               ))}
             </div>
