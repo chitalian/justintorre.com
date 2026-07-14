@@ -73,10 +73,6 @@ export const metadata: Metadata = {
     creator: "@justintorre",
     images: ["https://www.helicone.ai/_next/image?url=%2Fassets%2Flanding%2Fhelicone-mobile.webp&w=384&q=75"],
   },
-  verification: {
-    google: "google-site-verification-code",
-    yandex: "yandex-verification-code",
-  },
 };
 
 export default function RootLayout({

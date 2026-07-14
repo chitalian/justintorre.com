@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { personSchema } from "@/components/StructuredData";
+
+const profilePageSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  dateModified: "2026-07-14",
+  mainEntity: personSchema,
+};
 
 export const metadata: Metadata = {
   title: "About",
@@ -166,6 +174,10 @@ export default function AboutPage() {
 
   return (
     <main className="mx-auto max-w-[680px] px-6 py-20 text-black sm:py-28">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageSchema) }}
+      />
       <Link
         href="/"
         className="font-mono text-sm text-neutral-500 transition-colors hover:text-black"
