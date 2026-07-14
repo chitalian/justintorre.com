@@ -61,6 +61,13 @@ const recentProjects: {
   date: Date;
 }[] = [
   {
+    title: "Helicone joins Mintlify",
+    description:
+      "After 3 years, 14T+ tokens processed, and $1M+ ARR, Helicone is joining Mintlify to build the context layer for AI agents.",
+    url: "https://x.com/justinstorre/status/2028878183949554127",
+    date: new Date("2026-07-14"),
+  },
+  {
     title: "Helicone Re-launch",
     description: "A platform for monitoring AI models.",
     url: "https://x.com/helicone_ai/status/1686840508658876419?s=20",
