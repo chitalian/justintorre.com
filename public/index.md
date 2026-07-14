@@ -1,6 +1,6 @@
 # Justin Torre
 
-Founder and engineer. I ran Helicone (YC W23), open-source LLM observability, from first commit to $1M+ ARR.
+Ex-Founder and engineer. I ran Helicone (YC W23), open-source LLM observability, from first commit to $1M+ ARR. Now I am building an FDE team at Mintlify as their Head of Enterprise Solutions.
 
 14T+ tokens processed · 36M+ end users tracked · 30k+ signups · 5.2k GitHub stars
 

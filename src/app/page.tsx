@@ -166,8 +166,9 @@ export default function Home() {
             Justin Torre
           </h1>
           <p className="mt-5 max-w-[52ch] text-[15px] leading-relaxed">
-            Founder and engineer. I ran Helicone (YC W23), open-source LLM
-            observability, from first commit to $1M+ ARR.
+            Ex-Founder and engineer. I ran Helicone (YC W23), open-source LLM
+            observability, from first commit to $1M+ ARR. Now I am building an
+            FDE team at Mintlify as their Head of Enterprise Solutions.
           </p>
           <p className="mt-4 font-mono text-[12px] leading-relaxed tabular-nums">
             14T+ tokens processed &middot; 36M+ end users tracked &middot; 30k+
